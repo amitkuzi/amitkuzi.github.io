@@ -84,7 +84,7 @@
       "id": "utils",
       "name": "amitkuzi.utils",
       "tagline": ".NET utility library",
-      "description": "TODO — the GitHub description currently reads 'junt Dot net' (typo). Fix it on GitHub, then mirror it here.",
+      "description": "Lightweight C#/.NET TaskTimer for recurring asynchronous task execution with delay, timeout, cancellation, and completion callbacks.",
       "repo": "https://github.com/amitkuzi/amitkuzi.utils",
       "live": null,
       "caseStudy": null,
@@ -92,8 +92,8 @@
       "stack": [".NET"],
       "year": 2016,
       "featured": false,
-      "status": "hold",
-      "_hold_reason": "Description is a typo on GitHub. T-51 fixes this."
+      "status": "live" 
+       
     },
     {
       "id": "feedback-widget",
