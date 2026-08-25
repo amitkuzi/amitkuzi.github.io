@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<!-- amitkuzi.github.io hub — T-53.
+     Job-title string is canonical per T-44: "Software Architect & Engineering Consultant".
+     It appears in three places: <title>, .role, and the Person JSON-LD below. Keep them identical.
+     projects.json / models.json are the source of truth for this page's content; the markup is
+     written out statically on purpose, so the page is crawlable without JavaScript.
+     Model thumbnails are drawn as toolpath contours (design-philosophy-continuous-wall.md) —
+     no platform CDN hotlinks, no referrer leak. -->
+<title>Amit Kuzi — Software Architect &amp; Engineering Consultant</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;800&family=Public+Sans:wght@400;600&family=Rubik:wght@400;700&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Amit Kuzi — software architect and engineering consultant in Holon, Israel. Open tools, own repositories and published 3D models.">
+<link rel="canonical" href="https://amitkuzi.github.io/">
+<meta name="author" content="Amit Kuzi">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Amit Kuzi — Software Architect &amp; Engineering Consultant">
+<meta property="og:description" content="Open tools, own repositories and published 3D models. Holon, Israel. Building software since 1997.">
+<meta property="og:url" content="https://amitkuzi.github.io/">
+<meta name="twitter:card" content="summary">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfilePage",
+      "@id": "https://amitkuzi.github.io/#page",
+      "url": "https://amitkuzi.github.io/",
+      "name": "Amit Kuzi — Software Architect & Engineering Consultant",
+      "mainEntity": { "@id": "https://amitkuzi.com/#amit-kuzi" }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://amitkuzi.com/#amit-kuzi",
+      "name": "Amit Kuzi",
+      "alternateName": "עמית קוזי",
+      "jobTitle": "Software Architect & Engineering Consultant",
+      "url": "https://amitkuzi.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Holon",
+        "addressCountry": "IL"
+      },
+      "sameAs": [
+        "https://github.com/amitkuzi",
+        "https://makerworld.com/en/@amitkuzi",
+        "https://www.printables.com/@amitkuzi_4603412/models"
+      ],
+      "worksFor": { "@type": "Organization", "name": "Amit Kuzi Consulting" }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://amitkuzi.github.io/OneWall/#app",
+      "name": "OneWall",
+      "url": "https://amitkuzi.github.io/OneWall/",
+      "applicationCategory": "DesignApplication",
+      "operatingSystem": "Any",
+      "isAccessibleForFree": true,
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "author": { "@id": "https://amitkuzi.com/#amit-kuzi" }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://amitkuzi.github.io/localViewer/#app",
+      "name": "localViewer",
+      "url": "https://amitkuzi.github.io/localViewer/",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Any",
+      "isAccessibleForFree": true,
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "author": { "@id": "https://amitkuzi.com/#amit-kuzi" }
+    }
+  ]
+}
+</script>
+<style>
+
+:root{
+  --ground:#f4efe7; --raised:#fff; --base:#221e1a;
+  --line:#e0d6c6; --line-strong:#c9bca6;
+  --fg:#221e1a; --fg2:#6e6357;
+  --fg-on-base:#b5a797; --fg-on-base-strong:#f2a97c;
+  --ember:#e4632d; --ember-ink:#b8431a; --brass:#c9a227; --on-ember:#1a1210;
+  --rule:3px; --measure:54ch;
+  --font-display:Archivo,system-ui,sans-serif;
+  --font-body:'Public Sans',system-ui,sans-serif;
+  --font-he:Rubik,system-ui,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--ground);color:var(--fg);font-family:var(--font-body);font-weight:400;
+     line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1000px;margin:0 auto;padding:0 clamp(20px,5vw,64px)}
+@media(max-width:820px){.tool{grid-template-columns:1fr;gap:24px}.repos,.models{grid-template-columns:1fr}
+ .mast h1{font-size:clamp(40px,11vw,76px)}.contour{display:none}footer .wrap{flex-direction:column;align-items:flex-start;gap:22px}footer .fr{text-align:left}}
+
+/* ---------- layer-line motif: the accreted wall ---------- */
+.contour{position:absolute;right:-118px;top:-56px;width:680px;height:580px;pointer-events:none;opacity:.62}
+.contour path{fill:none;stroke:#f2a97c;stroke-width:.85;vector-effect:non-scaling-stroke}
+.strata--light{background:repeating-linear-gradient(to bottom,
+   transparent 0 3px, rgba(34,30,26,.05) 3px 4px);height:34px}
+
+/* ---------- masthead ---------- */
+.mast{background:var(--base);color:var(--fg-on-base);position:relative;overflow:hidden}
+.mast .wrap{padding-top:66px;padding-bottom:52px;position:relative;z-index:2}
+.eyebrow{font-family:var(--font-display);font-weight:600;font-size:11px;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--fg-on-base-strong)}
+.mast h1{font-family:var(--font-display);font-weight:800;font-size:76px;line-height:1.02;
+  letter-spacing:-.018em;color:#fff;margin:26px 0 0}
+.mast h1 .he{font-family:var(--font-he);font-weight:700;font-size:52px;color:var(--fg-on-base);
+  letter-spacing:0;display:block;margin-top:8px}
+.role{font-family:var(--font-display);font-weight:600;font-size:19px;letter-spacing:.008em;
+  color:var(--fg-on-base-strong);margin-top:22px}
+.bio{max-width:56ch;font-size:15.5px;line-height:1.62;color:var(--fg-on-base);margin-top:20px}
+.sameas{display:flex;gap:0;margin-top:34px;border-top:1px solid rgba(181,167,151,.24);
+  border-bottom:1px solid rgba(181,167,151,.24)}
+.sameas a{flex:1;padding:16px 0;font-family:var(--font-display);font-weight:600;font-size:12px;
+  letter-spacing:.13em;text-transform:uppercase;color:#fff;text-decoration:none;
+  border-right:1px solid rgba(181,167,151,.24)}
+.sameas a:last-child{border-right:0}
+.sameas a span{color:var(--fg-on-base-strong);margin-right:9px}
+
+/* ---------- section furniture ---------- */
+section{padding:66px 0 0}
+.shead{display:flex;align-items:baseline;gap:20px;border-bottom:var(--rule) solid var(--base);
+  padding-bottom:12px}
+.idx{font-family:var(--font-display);font-weight:800;font-size:13px;letter-spacing:.14em;
+  color:var(--ember);min-width:34px}
+.shead h2{font-family:var(--font-display);font-weight:800;font-size:31px;letter-spacing:-.014em;flex:1}
+.count{font-family:var(--font-display);font-weight:600;font-size:12px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--fg2)}
+
+/* ---------- tools (the live things — ember) ---------- */
+.tool{border-bottom:1px solid var(--line-strong);padding:34px 0;display:grid;
+  grid-template-columns:1fr 300px;gap:56px;align-items:start}
+.tool h3{font-family:var(--font-display);font-weight:800;font-size:38px;letter-spacing:-.02em;
+  line-height:1.06}
+.tool h3 em{font-style:normal;color:var(--ember)}
+.tool .tag{font-family:var(--font-display);font-weight:600;font-size:12.5px;letter-spacing:.06em;
+  color:var(--ember-ink);margin-top:9px}
+.tool p{font-size:15.5px;color:var(--fg2);max-width:52ch;margin-top:14px;line-height:1.6}
+.stack{display:flex;flex-wrap:wrap;gap:7px;margin-top:18px}
+.stack span{font-family:var(--font-display);font-weight:600;font-size:10.5px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--fg2);border:1px solid var(--line-strong);padding:4px 9px}
+.acts{display:flex;flex-direction:column;gap:0;border-top:1px solid var(--base)}
+.acts a{font-family:var(--font-display);font-weight:600;font-size:12.5px;letter-spacing:.1em;
+  text-transform:uppercase;text-decoration:none;color:var(--fg);padding:13px 2px;
+  border-bottom:1px solid var(--line-strong);display:flex;justify-content:space-between}
+.acts a.primary{background:var(--ember);color:var(--on-ember);padding-left:12px;padding-right:12px;
+  border-bottom:1px solid var(--ember)}
+.acts a i{font-style:normal;color:var(--ember)}
+.acts a.primary i{color:var(--on-ember)}
+
+/* ---------- source (finished register — brass) ---------- */
+.repos{display:grid;grid-template-columns:1fr 1fr;gap:0;border-left:1px solid var(--line-strong)}
+.repo{border-bottom:1px solid var(--line-strong);border-right:1px solid var(--line-strong);
+  padding:22px 24px;min-height:132px}
+.repo .rn{font-family:var(--font-display);font-weight:800;font-size:17px;letter-spacing:-.008em}
+.repo .rn a{color:inherit;text-decoration:none;border-bottom:2px solid var(--line-strong)}
+.repo .rn a:hover{border-bottom-color:var(--ember)}
+.repo .rd{font-size:13.5px;color:var(--fg2);margin-top:7px;line-height:1.5}
+.repo .rm{font-family:var(--font-display);font-weight:600;font-size:10.5px;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--brass);margin-top:12px}
+.repo .rm b{color:var(--fg2);font-weight:600}
+
+/* ---------- printed ---------- */
+.models{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-left:1px solid var(--line-strong)}
+.model{border-bottom:1px solid var(--line-strong);border-right:1px solid var(--line-strong);padding:0}
+.mthumb{aspect-ratio:3/2;background:var(--base);position:relative;overflow:hidden}
+.mthumb svg{position:absolute;inset:0;width:100%;height:100%}
+.mthumb svg path{fill:none;stroke:#f2a97c;stroke-width:.9;vector-effect:non-scaling-stroke}
+.mthumb .n{position:absolute;left:15px;bottom:9px;font-family:var(--font-display);font-weight:800;
+  font-size:34px;color:rgba(181,167,151,.42);line-height:1;letter-spacing:.02em}
+.mthumb .ph{position:absolute;right:13px;top:11px;font-family:var(--font-display);font-weight:600;
+  font-size:8.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(181,167,151,.42)}
+.mbody{padding:16px 18px 20px}
+.mbody .mt{font-family:var(--font-display);font-weight:800;font-size:14.5px;line-height:1.24}
+.mbody .ms{font-size:12.5px;color:var(--fg2);margin-top:7px;line-height:1.48}
+.plats{display:flex;gap:6px;margin-top:12px}
+.plats{flex-wrap:wrap}
+.plats a{font-family:var(--font-display);font-weight:600;font-size:9.5px;letter-spacing:.11em;
+  text-transform:uppercase;text-decoration:none;color:var(--fg);border:1px solid var(--line-strong);
+  padding:3px 7px;white-space:nowrap}
+.plats a.made{border-color:var(--ember);color:var(--ember-ink)}
+
+/* ---------- footer ---------- */
+footer{background:var(--base);color:var(--fg-on-base);margin-top:82px}
+footer .wrap{padding-top:44px;padding-bottom:44px;display:flex;justify-content:space-between;
+  align-items:flex-end}
+footer .fl{font-family:var(--font-display);font-weight:800;font-size:20px;color:#fff}
+footer .fm{font-size:13px;margin-top:8px;color:var(--fg-on-base)}
+footer .fr{text-align:right;font-family:var(--font-display);font-weight:600;font-size:10.5px;
+  letter-spacing:.15em;text-transform:uppercase;color:var(--fg-on-base-strong);line-height:2}
+.cat{background:transparent}
+.catin{padding:26px 22px;border-left:var(--rule) solid var(--brass);height:100%}
+.catk{font-family:var(--font-display);font-weight:800;font-size:10.5px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--brass)}
+.catn{font-family:var(--font-display);font-weight:800;font-size:15px;line-height:1.3;margin-top:12px;
+  letter-spacing:-.006em}
+.catf{font-size:11.5px;color:var(--fg2);margin-top:14px;line-height:1.62}
+.note{font-family:var(--font-display);font-weight:600;font-size:10px;letter-spacing:.15em;
+  text-transform:uppercase;color:var(--fg2);padding:14px 0 0}
+</style>
+</head>
+<body>
+
+<header class="mast">
+  <div class="wrap">
+    <div class="eyebrow">Holon · Israel — Building software since 1997</div>
+    <h1>Amit Kuzi<span class="he">עמית קוזי</span></h1>
+    <div class="role">Software Architect &amp; Engineering Consultant</div>
+    <p class="bio">Independent software architect and engineering consultant. Architecture and
+      modernisation, applied AI in engineering, and FDM process. Everything below is public, working,
+      and mine.</p>
+    <nav class="sameas">
+      <a href="https://amitkuzi.com"><span>↗</span>amitkuzi.com</a>
+      <a href="https://github.com/amitkuzi"><span>↗</span>GitHub</a>
+      <a href="https://makerworld.com/en/@amitkuzi"><span>↗</span>MakerWorld</a>
+      <a href="https://www.printables.com/@amitkuzi_4603412/models"><span>↗</span>Printables</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section>
+    <div class="shead"><div class="idx">01</div><h2>Tools</h2><div class="count">Live in the browser</div></div>
+
+    <article class="tool">
+      <div>
+        <h3>One<em>Wall</em></h3>
+        <div class="tag">Parametric vase-mode bin &amp; container customizer</div>
+        <p>A single OpenSCAD model exposed as an interactive customizer. Three controllable height
+          sections, textured wall patterns, live preview, STL export — all generated client-side.</p>
+        <div class="stack"><span>OpenSCAD</span><span>Three.js</span><span>CSG</span><span>STL</span></div>
+      </div>
+      <div class="acts">
+        <a class="primary" href="https://amitkuzi.github.io/OneWall/">Launch<i>→</i></a>
+        <a href="https://github.com/amitkuzi/OneWall">Source<i>↗</i></a>
+        <a href="https://amitkuzi.com/projects/onewall/">Case study<i>↗</i></a>
+      </div>
+    </article>
+
+    <article class="tool">
+      <div>
+        <h3>local<em>Viewer</em></h3>
+        <div class="tag">Local-first viewer for technical files</div>
+        <p>Markdown, YAML, CSV, STL, 3MF, STEP, OpenSCAD and images, opened straight in the browser.
+          Nothing is uploaded — every file is parsed client-side. Installable, works offline.</p>
+        <div class="stack"><span>File System Access</span><span>PWA</span><span>WebGL</span><span>Offline-first</span></div>
+      </div>
+      <div class="acts">
+        <a class="primary" href="https://amitkuzi.github.io/localViewer/">Launch<i>→</i></a>
+        <a href="https://github.com/amitkuzi/localViewer">Source<i>↗</i></a>
+        <a href="https://amitkuzi.com/projects/localviewer/">Case study<i>↗</i></a>
+      </div>
+    </article>
+  </section>
+
+  <section>
+    <div class="shead"><div class="idx">02</div><h2>Source</h2><div class="count">Own repositories — no forks</div></div>
+    <div class="repos">
+      <div class="repo"><div class="rn"><a href="https://github.com/amitkuzi/amitkuzi.identity.RavenDB">amitkuzi.identity.RavenDB</a></div>
+        <div class="rd">RavenDB as the UserStore and RoleStore behind Microsoft Identity, in place of Entity Framework.</div>
+        <div class="rm">C# · .NET · <b>2021</b></div></div>
+      <div class="repo"><div class="rn"><a href="https://github.com/amitkuzi/xpathEval">xpathEval</a></div>
+        <div class="rd">Write an XPath expression, see what it selects out of a sample document, without a full XML editor.</div>
+        <div class="rm">C# · XPath · <b>2019</b></div></div>
+      <div class="repo"><div class="rn"><a href="https://github.com/amitkuzi/AmitKuzi.3dPrint.Modular">AmitKuzi.3dPrint.Modular</a></div>
+        <div class="rd">Modular parametric parts for FDM.</div>
+        <div class="rm">Parametric CAD · <b>2026</b></div></div>
+      <div class="repo"><div class="rn"><a href="https://github.com/amitkuzi/amitkuzi.utils">amitkuzi.utils</a></div>
+        <div class="rd">.NET utility library.</div>
+        <div class="rm">C# · .NET · <b>2016</b></div></div>
+    </div>
+    <div class="note">Tracked in projects.json — 12 own repositories, 4 shown, the rest held pending descriptions</div>
+  </section>
+
+  <section>
+    <div class="shead"><div class="idx">03</div><h2>Printed</h2><div class="count">Published models</div></div>
+    <div class="models">
+      <div class="model">
+        <div class="mthumb"><div class="g"></div><div class="n">01</div></div>
+        <div class="mbody"><div class="mt">OneWall — Vase-Mode Bins + Gridfinity Creator</div>
+          <div class="ms">Parametric bins generated in the browser. Pick the dimensions, export the STL.</div>
+          <div class="plats"><a class="made" href="https://amitkuzi.github.io/OneWall/">Made with OneWall</a><a href="https://makerworld.com/en/models/2948815-onewall-vase-mode-bin-container-customizer">MakerWorld</a><a href="https://www.printables.com/model/1785076-onewall-vase-mode-bins-gridfinity-creator-parametr">Printables</a></div></div>
+      </div>
+      <div class="model">
+        <div class="mthumb"><div class="g"></div><div class="n">02</div></div>
+        <div class="mbody"><div class="mt">Vacuum Valve for Bag or Container</div>
+          <div class="ms">A printable one-way valve for pulling air out of a storage bag.</div>
+          <div class="plats"><a href="https://makerworld.com/en/models/2611095-vacuum-valve-for-bag-or-container">MakerWorld</a></div></div>
+      </div>
+      <div class="model">
+        <div class="mthumb"><div class="g"></div><div class="n">03</div></div>
+        <div class="mbody"><div class="mt">Helmet Donut (TPU Edition)</div>
+          <div class="ms">A TPU ring that keeps a helmet off the floor and off its shell.</div>
+          <div class="plats"><a href="https://makerworld.com/en/models/2584800-helmet-donut-tpu-edition">MakerWorld</a></div></div>
+      </div>
+      <div class="model">
+        <div class="mthumb"><div class="g"></div><div class="n">04</div></div>
+        <div class="mbody"><div class="mt">Sleek Under-Desk Headphone Hanger</div>
+          <div class="ms">Low-profile, mounts under a desk edge, keeps the work surface clear.</div>
+          <div class="plats"><a href="https://makerworld.com/en/models/2568791-sleek-under-desk-headphone-hanger">MakerWorld</a></div></div>
+      </div>
+      <div class="model">
+        <div class="mthumb"><div class="g"></div><div class="n">05</div></div>
+        <div class="mbody"><div class="mt">Pour-Over Coffee Glass Stabilizer Ring</div>
+          <div class="ms">Steadies a pour-over cone on a glass carafe.</div>
+          <div class="plats"><a href="https://makerworld.com/en/models/2494091-pour-over-coffee-glass-stabilizer-ring">MakerWorld</a></div></div>
+      </div>
+      <div class="model cat">
+        <div class="catin">
+          <div class="catk">Catalogue</div>
+          <div class="catn">Five published designs<br>across two platforms.</div>
+          <div class="catf">models.json — hand-edited,<br>redeployed. Nothing fetched<br>at run time.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div class="strata strata--light"></div>
+<footer>
+  <div class="wrap">
+    <div>
+      <div class="fl">amitkuzi.github.io</div>
+      <div class="fm">Everything here is public, working, and mine. The writing lives at amitkuzi.com.</div>
+    </div>
+    <div class="fr">
+      Amit Kuzi Consulting<br>Holon · Israel<br>Since 1997
+    </div>
+  </div>
+</footer>
+
+
+<script>
+// Vase-mode toolpath contours. Each ring is one layer of a single continuous wall;
+// the silhouette is the profile of the object it was actually printed as.
+const PROFILES = [
+  // OneWall bins — straight-walled bin, slight taper, textured wall
+  {p:t=>0.62+0.16*t,           lobes:6,  amp:.055, n:20, hs:0.92, sq:0.30},
+  // Vacuum valve — wide flange stepping down to a narrow neck
+  {p:t=>1.00-0.62*Math.pow(t,.55), lobes:0, amp:0,  n:16, hs:0.66, sq:0.34},
+  // Helmet donut — torus, TPU, the fat mid-section
+  {p:t=>0.52+0.46*Math.sin(Math.PI*t), lobes:0, amp:0, n:19, hs:0.70, sq:0.36},
+  // Headphone hanger — narrow shank opening into a hook
+  {p:t=>0.34+0.60*Math.pow(t,2.4), lobes:4, amp:.05, n:18, hs:0.96, sq:0.28},
+  // Pour-over ring — shallow, wide, near-constant
+  {p:t=>0.92-0.10*t,           lobes:0, amp:0,  n:11, hs:0.40, sq:0.38}
+];
+function stack(w,h,cfg){
+  const cx=w*.5, base=h*.80, maxR=Math.min(w*.40,h*.46), out=[];
+  for(let r=0;r<cfg.n;r++){
+    const t=r/(cfg.n-1), R=maxR*cfg.p(t), y=base-t*h*cfg.hs*0.62;
+    let d='';
+    for(let i=0;i<=110;i++){
+      const a=i/110*Math.PI*2;
+      const lobe=cfg.lobes?1+cfg.amp*Math.cos(a*cfg.lobes):1;
+      d+=(i?'L':'M')+(cx+Math.cos(a)*R*lobe).toFixed(1)+' '+(y+Math.sin(a)*R*lobe*cfg.sq).toFixed(1);
+    }
+    out.push('<path d="'+d+'Z" style="opacity:'+(0.20+0.55*t).toFixed(3)+'"/>');
+  }
+  return out.join('');
+}
+document.querySelectorAll('.mthumb').forEach((el,i)=>{
+  const r=el.getBoundingClientRect(), w=Math.round(r.width)||300, h=Math.round(r.height)||200;
+  el.insertAdjacentHTML('afterbegin',
+    '<svg viewBox="0 0 '+w+' '+h+'" preserveAspectRatio="none">'+stack(w,h,PROFILES[i%5])+'</svg>');
+  el.insertAdjacentHTML('beforeend','<div class="ph">Toolpath</div>');
+});
+// Masthead — the same gesture at monumental scale, cropped by the edge.
+(function(){
+  const el=document.querySelector('.mast'); if(!el) return;
+  const w=680,h=580,cx=w*.50,cy=h*.50,maxR=252,N=19; let d='';
+  for(let r=0;r<N;r++){
+    const t=r/(N-1), R=maxR*(0.16+0.84*t); let q='';
+    for(let i=0;i<=170;i++){
+      const a=i/170*Math.PI*2+0.30;
+      const lobe=1+0.042*Math.cos(a*6);
+      q+=(i?'L':'M')+(cx+Math.cos(a)*R*lobe).toFixed(1)+' '+(cy+Math.sin(a)*R*lobe*0.88).toFixed(1);
+    }
+    d+='<path d="'+q+'Z" style="opacity:'+(0.10+0.40*t).toFixed(3)+'"/>';
+  }
+  el.insertAdjacentHTML('afterbegin','<svg class="contour" viewBox="0 0 '+w+' '+h+'">'+d+'</svg>');
+})();
+</script>
+</body>
+</html>

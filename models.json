@@ -1,0 +1,78 @@
+{
+  "$schema": "./models.schema.json",
+  "_note": "Static catalogue of published 3D models for amitkuzi.github.io. Hand-maintained — nothing is fetched from MakerWorld or Printables at build or run time, by design. Publish a model, add a row here, redeploy.",
+  "_rules": [
+    "NO engagement counts. Downloads, likes and views go stale the moment this file is written, and a stale '2 downloads' reads worse than no number at all. If a number is ever wanted, it belongs on the platform page, not here.",
+    "One model = one entry, even when it is published on several platforms. 'links' is an array so the same design can carry a MakerWorld and a Printables URL without being duplicated.",
+    "'thumb' is a LOCAL path. Download the platform thumbnail into ./assets/models/ and commit it — hotlinking a platform CDN breaks when they rotate URLs, and it leaks a referrer.",
+    "'tool' links a model back to the app that generated it. That link is the whole point: it is what turns a 3D-model listing into evidence of software engineering."
+  ],
+  "updated": "2026-08-24",
+  "profiles": [
+    { "platform": "MakerWorld", "url": "https://makerworld.com/en/@amitkuzi", "handle": "@amitkuzi" },
+    { "platform": "Printables", "url": "https://www.printables.com/@amitkuzi_4603412/models", "handle": "@amitkuzi_4603412" }
+  ],
+  "models": [
+    {
+      "id": "onewall-bins",
+      "title": "OneWall — Vase-Mode Bins + Gridfinity Creator",
+      "summary": "Parametric vase-mode bins and containers, generated in the browser. Pick the dimensions, the wall texture and the rim, export the STL.",
+      "tool": "onewall",
+      "tags": ["vase-mode", "gridfinity", "storage", "parametric"],
+      "thumb": "./assets/models/onewall.webp",
+      "links": [
+        { "platform": "MakerWorld", "url": "https://makerworld.com/en/models/2948815-onewall-vase-mode-bin-container-customizer" },
+        { "platform": "Printables", "url": "https://www.printables.com/model/1785076-onewall-vase-mode-bins-gridfinity-creator-parametr" }
+      ],
+      "featured": true
+    },
+    {
+      "id": "vacuum-valve",
+      "title": "Vacuum Valve for Bag or Container",
+      "summary": "A printable one-way valve for pulling air out of a storage bag or container.",
+      "tool": null,
+      "tags": ["functional", "vacuum", "storage"],
+      "thumb": "./assets/models/vacuum-valve.webp",
+      "links": [
+        { "platform": "MakerWorld", "url": "https://makerworld.com/en/models/2611095-vacuum-valve-for-bag-or-container" }
+      ],
+      "featured": true
+    },
+    {
+      "id": "helmet-donut",
+      "title": "Helmet Donut (TPU Edition)",
+      "summary": "A TPU ring that keeps a helmet off the floor and off its shell.",
+      "tool": null,
+      "tags": ["TPU", "flexible", "functional"],
+      "thumb": "./assets/models/helmet-donut.webp",
+      "links": [
+        { "platform": "MakerWorld", "url": "https://makerworld.com/en/models/2584800-helmet-donut-tpu-edition" }
+      ],
+      "featured": true
+    },
+    {
+      "id": "headphone-hanger",
+      "title": "Sleek Under-Desk Headphone Hanger",
+      "summary": "A low-profile hanger that mounts under a desk edge and keeps headphones off the work surface.",
+      "tool": null,
+      "tags": ["desk", "functional", "mount"],
+      "thumb": "./assets/models/headphone-hanger.webp",
+      "links": [
+        { "platform": "MakerWorld", "url": "https://makerworld.com/en/models/2568791-sleek-under-desk-headphone-hanger" }
+      ],
+      "featured": false
+    },
+    {
+      "id": "pour-over-ring",
+      "title": "Pour-Over Coffee Glass Stabilizer Ring",
+      "summary": "A ring that steadies a pour-over cone on a glass carafe.",
+      "tool": null,
+      "tags": ["kitchen", "coffee", "functional"],
+      "thumb": "./assets/models/pour-over-ring.webp",
+      "links": [
+        { "platform": "MakerWorld", "url": "https://makerworld.com/en/models/2494091-pour-over-coffee-glass-stabilizer-ring" }
+      ],
+      "featured": false
+    }
+  ]
+}

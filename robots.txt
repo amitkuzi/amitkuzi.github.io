@@ -1,0 +1,11 @@
+### amitkuzi.github.io — host-root robots.txt.
+### robots.txt is only honoured at the origin root, so this file governs the
+### project pages (/OneWall/, /localViewer/) as well. Their per-app copies are
+### documentation only.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://amitkuzi.github.io/sitemap.xml
+Sitemap: https://amitkuzi.github.io/OneWall/sitemap.xml
+Sitemap: https://amitkuzi.github.io/localViewer/sitemap.xml
