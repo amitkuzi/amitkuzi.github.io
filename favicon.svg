@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Amit Kuzi">
+  <title>Amit Kuzi</title>
+  <!-- Charcoal tile so the mark holds against both light and dark browser chrome.
+       Two layers instead of four: at 16px the thin top bars merge into mush. -->
+  <rect width="64" height="64" rx="14" fill="#221E1A"/>
+  <rect x="10" y="38" width="44" height="8" rx="2.5" fill="#E4632D"/>
+  <rect x="17" y="26" width="30" height="8" rx="2.5" fill="#C9A227"/>
+  <rect x="25" y="14" width="14" height="8" rx="2.5" fill="#C9A227" opacity=".6"/>
+</svg>

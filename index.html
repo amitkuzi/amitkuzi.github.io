@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="fonts-pending">
 <head>
 <meta charset="utf-8">
 <!-- amitkuzi.github.io hub — T-53.
@@ -10,9 +10,10 @@
      Model thumbnails are drawn as toolpath contours (design-philosophy-continuous-wall.md) —
      no platform CDN hotlinks, no referrer leak. -->
 <title>Amit Kuzi — Software Architect &amp; Engineering Consultant</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;800&family=Public+Sans:wght@400;600&family=Rubik:wght@400;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preload" href="fonts/archivo-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/public-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/rubik-hebrew-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="Amit Kuzi — software architect and engineering consultant in Holon, Israel. Open tools, own repositories and published 3D models.">
 <link rel="canonical" href="https://amitkuzi.github.io/">
@@ -78,14 +79,61 @@
   ]
 }
 </script>
+<script>
+(() => {
+  const r = document.documentElement;
+  const ready = () => { r.classList.remove('fonts-pending'); r.classList.add('fonts-ready'); };
+  document.fonts.ready.then(ready);
+  setTimeout(ready, 2500);
+})();
+</script>
 <style>
+
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 100 900;
+  src: url('fonts/archivo-latin-wght-normal.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+    U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Public Sans';
+  font-style: normal;
+  font-weight: 100 900;
+  src: url('fonts/public-sans-latin-wght-normal.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+    U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 100 900;
+  src: url('fonts/rubik-hebrew-wght-normal.woff2') format('woff2');
+  unicode-range: U+0307-0308, U+0590-05FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-FB4F;
+}
+@font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 100 900;
+  src: url('fonts/rubik-latin-wght-normal.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+    U+2212, U+2215, U+FEFF, U+FFFD;
+}
+.fonts-pending h1 { opacity: 0; }
+.fonts-ready h1 { opacity: 1; transition: opacity .5s; }
+svg text { direction: ltr; unicode-bidi: isolate; }
+.grid > * { min-inline-size: 0; }
 
 :root{
   --ground:#f4efe7; --raised:#fff; --base:#221e1a;
   --line:#e0d6c6; --line-strong:#c9bca6;
   --fg:#221e1a; --fg2:#6e6357;
   --fg-on-base:#b5a797; --fg-on-base-strong:#f2a97c;
-  --ember:#e4632d; --ember-ink:#b8431a; --brass:#c9a227; --on-ember:#1a1210;
+  --ember:#e4632d; --ember-ink:#b8431a; --brass:#c9a227; --brass-ink:#7a5c0e; --on-ember:#1a1210;
   --rule:3px; --measure:54ch;
   --font-display:Archivo,system-ui,sans-serif;
   --font-body:'Public Sans',system-ui,sans-serif;
@@ -95,11 +143,9 @@
 body{background:var(--ground);color:var(--fg);font-family:var(--font-body);font-weight:400;
      line-height:1.6;-webkit-font-smoothing:antialiased}
 .wrap{max-width:1000px;margin:0 auto;padding:0 clamp(20px,5vw,64px)}
-@media(max-width:820px){.tool{grid-template-columns:1fr;gap:24px}.repos,.models{grid-template-columns:1fr}
- .mast h1{font-size:clamp(40px,11vw,76px)}.contour{display:none}footer .wrap{flex-direction:column;align-items:flex-start;gap:22px}footer .fr{text-align:left}}
 
 /* ---------- layer-line motif: the accreted wall ---------- */
-.contour{position:absolute;right:-118px;top:-56px;width:680px;height:580px;pointer-events:none;opacity:.62}
+.contour{position:absolute;inset-inline-end:-118px;top:-56px;width:680px;height:580px;pointer-events:none;opacity:.62}
 .contour path{fill:none;stroke:#f2a97c;stroke-width:.85;vector-effect:non-scaling-stroke}
 .strata--light{background:repeating-linear-gradient(to bottom,
    transparent 0 3px, rgba(34,30,26,.05) 3px 4px);height:34px}
@@ -109,8 +155,10 @@ body{background:var(--ground);color:var(--fg);font-family:var(--font-body);font-
 .mast .wrap{padding-top:66px;padding-bottom:52px;position:relative;z-index:2}
 .eyebrow{font-family:var(--font-display);font-weight:600;font-size:11px;letter-spacing:.22em;
   text-transform:uppercase;color:var(--fg-on-base-strong)}
+.brandmark{display:flex;align-items:center;gap:18px;margin-top:26px}
+.brandmark svg{width:40px;height:35px;flex-shrink:0}
 .mast h1{font-family:var(--font-display);font-weight:800;font-size:76px;line-height:1.02;
-  letter-spacing:-.018em;color:#fff;margin:26px 0 0}
+  letter-spacing:-.018em;color:#fff;margin:0}
 .mast h1 .he{font-family:var(--font-he);font-weight:700;font-size:52px;color:var(--fg-on-base);
   letter-spacing:0;display:block;margin-top:8px}
 .role{font-family:var(--font-display);font-weight:600;font-size:19px;letter-spacing:.008em;
@@ -120,16 +168,16 @@ body{background:var(--ground);color:var(--fg);font-family:var(--font-body);font-
   border-bottom:1px solid rgba(181,167,151,.24)}
 .sameas a{flex:1;padding:16px 0;font-family:var(--font-display);font-weight:600;font-size:12px;
   letter-spacing:.13em;text-transform:uppercase;color:#fff;text-decoration:none;
-  border-right:1px solid rgba(181,167,151,.24)}
-.sameas a:last-child{border-right:0}
-.sameas a span{color:var(--fg-on-base-strong);margin-right:9px}
+  border-inline-end:1px solid rgba(181,167,151,.24)}
+.sameas a:last-child{border-inline-end:0}
+.sameas a span{color:var(--fg-on-base-strong);margin-inline-end:9px}
 
 /* ---------- section furniture ---------- */
 section{padding:66px 0 0}
 .shead{display:flex;align-items:baseline;gap:20px;border-bottom:var(--rule) solid var(--base);
   padding-bottom:12px}
 .idx{font-family:var(--font-display);font-weight:800;font-size:13px;letter-spacing:.14em;
-  color:var(--ember);min-width:34px}
+  color:var(--ember-ink);min-width:34px}
 .shead h2{font-family:var(--font-display);font-weight:800;font-size:31px;letter-spacing:-.014em;flex:1}
 .count{font-family:var(--font-display);font-weight:600;font-size:12px;letter-spacing:.16em;
   text-transform:uppercase;color:var(--fg2)}
@@ -139,7 +187,7 @@ section{padding:66px 0 0}
   grid-template-columns:1fr 300px;gap:56px;align-items:start}
 .tool h3{font-family:var(--font-display);font-weight:800;font-size:38px;letter-spacing:-.02em;
   line-height:1.06}
-.tool h3 em{font-style:normal;color:var(--ember)}
+.tool h3 em{font-style:normal;color:var(--ember-ink)}
 .tool .tag{font-family:var(--font-display);font-weight:600;font-size:12.5px;letter-spacing:.06em;
   color:var(--ember-ink);margin-top:9px}
 .tool p{font-size:15.5px;color:var(--fg2);max-width:52ch;margin-top:14px;line-height:1.6}
@@ -150,32 +198,32 @@ section{padding:66px 0 0}
 .acts a{font-family:var(--font-display);font-weight:600;font-size:12.5px;letter-spacing:.1em;
   text-transform:uppercase;text-decoration:none;color:var(--fg);padding:13px 2px;
   border-bottom:1px solid var(--line-strong);display:flex;justify-content:space-between}
-.acts a.primary{background:var(--ember);color:var(--on-ember);padding-left:12px;padding-right:12px;
+.acts a.primary{background:var(--ember);color:var(--on-ember);padding-inline-start:12px;padding-inline-end:12px;
   border-bottom:1px solid var(--ember)}
-.acts a i{font-style:normal;color:var(--ember)}
+.acts a i{font-style:normal;color:var(--ember-ink)}
 .acts a.primary i{color:var(--on-ember)}
 
 /* ---------- source (finished register — brass) ---------- */
-.repos{display:grid;grid-template-columns:1fr 1fr;gap:0;border-left:1px solid var(--line-strong)}
-.repo{border-bottom:1px solid var(--line-strong);border-right:1px solid var(--line-strong);
+.repos{display:grid;grid-template-columns:1fr 1fr;gap:0;border-inline-start:1px solid var(--line-strong)}
+.repo{border-bottom:1px solid var(--line-strong);border-inline-end:1px solid var(--line-strong);
   padding:22px 24px;min-height:132px}
 .repo .rn{font-family:var(--font-display);font-weight:800;font-size:17px;letter-spacing:-.008em}
 .repo .rn a{color:inherit;text-decoration:none;border-bottom:2px solid var(--line-strong)}
 .repo .rn a:hover{border-bottom-color:var(--ember)}
 .repo .rd{font-size:13.5px;color:var(--fg2);margin-top:7px;line-height:1.5}
 .repo .rm{font-family:var(--font-display);font-weight:600;font-size:10.5px;letter-spacing:.12em;
-  text-transform:uppercase;color:var(--brass);margin-top:12px}
+  text-transform:uppercase;color:var(--brass-ink);margin-top:12px}
 .repo .rm b{color:var(--fg2);font-weight:600}
 
 /* ---------- printed ---------- */
-.models{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-left:1px solid var(--line-strong)}
-.model{border-bottom:1px solid var(--line-strong);border-right:1px solid var(--line-strong);padding:0}
+.models{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-inline-start:1px solid var(--line-strong)}
+.model{border-bottom:1px solid var(--line-strong);border-inline-end:1px solid var(--line-strong);padding:0}
 .mthumb{aspect-ratio:3/2;background:var(--base);position:relative;overflow:hidden}
 .mthumb svg{position:absolute;inset:0;width:100%;height:100%}
 .mthumb svg path{fill:none;stroke:#f2a97c;stroke-width:.9;vector-effect:non-scaling-stroke}
-.mthumb .n{position:absolute;left:15px;bottom:9px;font-family:var(--font-display);font-weight:800;
+.mthumb .n{position:absolute;inset-inline-start:15px;bottom:9px;font-family:var(--font-display);font-weight:800;
   font-size:34px;color:rgba(181,167,151,.42);line-height:1;letter-spacing:.02em}
-.mthumb .ph{position:absolute;right:13px;top:11px;font-family:var(--font-display);font-weight:600;
+.mthumb .ph{position:absolute;inset-inline-end:13px;top:11px;font-family:var(--font-display);font-weight:600;
   font-size:8.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(181,167,151,.42)}
 .mbody{padding:16px 18px 20px}
 .mbody .mt{font-family:var(--font-display);font-weight:800;font-size:14.5px;line-height:1.24}
@@ -193,17 +241,20 @@ footer .wrap{padding-top:44px;padding-bottom:44px;display:flex;justify-content:s
   align-items:flex-end}
 footer .fl{font-family:var(--font-display);font-weight:800;font-size:20px;color:#fff}
 footer .fm{font-size:13px;margin-top:8px;color:var(--fg-on-base)}
-footer .fr{text-align:right;font-family:var(--font-display);font-weight:600;font-size:10.5px;
+footer .fr{text-align:end;font-family:var(--font-display);font-weight:600;font-size:10.5px;
   letter-spacing:.15em;text-transform:uppercase;color:var(--fg-on-base-strong);line-height:2}
 .cat{background:transparent}
-.catin{padding:26px 22px;border-left:var(--rule) solid var(--brass);height:100%}
+.catin{padding:26px 22px;border-inline-start:var(--rule) solid var(--brass);height:100%}
 .catk{font-family:var(--font-display);font-weight:800;font-size:10.5px;letter-spacing:.16em;
-  text-transform:uppercase;color:var(--brass)}
+  text-transform:uppercase;color:var(--brass-ink)}
 .catn{font-family:var(--font-display);font-weight:800;font-size:15px;line-height:1.3;margin-top:12px;
   letter-spacing:-.006em}
 .catf{font-size:11.5px;color:var(--fg2);margin-top:14px;line-height:1.62}
 .note{font-family:var(--font-display);font-weight:600;font-size:10px;letter-spacing:.15em;
   text-transform:uppercase;color:var(--fg2);padding:14px 0 0}
+
+@media(max-width:820px){.tool{grid-template-columns:1fr;gap:24px}.repos,.models{grid-template-columns:1fr}
+ .mast h1{font-size:clamp(40px,11vw,76px)}.contour{display:none}footer .wrap{flex-direction:column;align-items:flex-start;gap:22px}footer .fr{text-align:start}}
 </style>
 </head>
 <body>
@@ -211,7 +262,16 @@ footer .fr{text-align:right;font-family:var(--font-display);font-weight:600;font
 <header class="mast">
   <div class="wrap">
     <div class="eyebrow">Holon · Israel — Building software since 1997</div>
-    <h1>Amit Kuzi<span class="he">עמית קוזי</span></h1>
+    <div class="brandmark">
+      <svg viewBox="0 0 48 42" role="img" aria-label="Amit Kuzi">
+        <title>Amit Kuzi</title>
+        <rect x="2"  y="30" width="44" height="6" rx="2" fill="#E4632D"/>
+        <rect x="6"  y="22" width="36" height="6" rx="2" fill="#E4632D" opacity=".8"/>
+        <rect x="10" y="14" width="28" height="6" rx="2" fill="#C9A227"/>
+        <rect x="16" y="6"  width="16" height="6" rx="2" fill="#C9A227" opacity=".65"/>
+      </svg>
+      <h1>Amit Kuzi<span class="he">עמית קוזי</span></h1>
+    </div>
     <div class="role">Software Architect &amp; Engineering Consultant</div>
     <p class="bio">Independent software architect and engineering consultant. Architecture and
       modernisation, applied AI in engineering, and FDM process. Everything below is public, working,
@@ -274,7 +334,7 @@ footer .fr{text-align:right;font-family:var(--font-display);font-weight:600;font
         <div class="rd">Modular parametric parts for FDM.</div>
         <div class="rm">Parametric CAD · <b>2026</b></div></div>
       <div class="repo"><div class="rn"><a href="https://github.com/amitkuzi/amitkuzi.utils">amitkuzi.utils</a></div>
-        <div class="rd">A TaskTimer for recurring asynchronous work — delay, timeout, cancellation and completion callbacks.</div>
+        <div class="rd">Lightweight C#/.NET TaskTimer for recurring asynchronous task execution with delay, timeout, cancellation, and completion callbacks.</div>
         <div class="rm">C# · .NET · <b>2016</b></div></div>
     </div>
     <div class="note">Tracked in projects.json — 12 own repositories, 4 shown, the rest held pending descriptions</div>
