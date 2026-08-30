@@ -18,7 +18,7 @@
 <meta name="description" content="Amit Kuzi — software architect and engineering consultant in Holon, Israel. Open tools, own repositories and published 3D models.">
 <link rel="canonical" href="https://amitkuzi.github.io/">
 <meta name="author" content="Amit Kuzi">
-<meta property="og:type" content="profile">
+<meta property="og:type" content="website">
 <meta property="og:title" content="Amit Kuzi — Software Architect &amp; Engineering Consultant">
 <meta property="og:description" content="Open tools, own repositories and published 3D models. Holon, Israel. Building software since 1997.">
 <meta property="og:url" content="https://amitkuzi.github.io/">
@@ -29,11 +29,15 @@
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "ProfilePage",
+      "@type": "CollectionPage",
       "@id": "https://amitkuzi.github.io/#page",
       "url": "https://amitkuzi.github.io/",
       "name": "Amit Kuzi — Software Architect & Engineering Consultant",
-      "mainEntity": { "@id": "https://amitkuzi.com/#amit-kuzi" }
+      "about": { "@id": "https://amitkuzi.com/#amit-kuzi" },
+      "hasPart": [
+        { "@id": "https://amitkuzi.github.io/OneWall/#app" },
+        { "@id": "https://amitkuzi.github.io/localViewer/#app" }
+      ]
     },
     {
       "@type": "Person",
