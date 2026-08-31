@@ -1,0 +1,56 @@
+{
+  "$schema": "./skills.schema.json",
+  "_note": "Static data for the Skills section of amitkuzi.github.io. Hand-maintained, mirrors https://github.com/amitkuzi/skills.",
+  "_rules": [
+    "One entry per skill folder in github.com/amitkuzi/skills.",
+    "'status' controls rendering: live = shown, hold = withheld, hidden = deliberately excluded.",
+    "'license' names the license and, when the skill isn't originally Amit's own work, the original author."
+  ],
+  "updated": "2026-08-31",
+  "skills": [
+    {
+      "id": "adhd-hebrew",
+      "name": "adhd-hebrew",
+      "tagline": "BLUF-first, scannable Hebrew responses for an ADHD reader",
+      "description": "Ultra-concise, structured response formatting for a Hebrew-speaking reader: direct answer first, short scannable sections, RTL-safe handling of code/paths/URLs, and Hebrew/English keyboard-layout decoding.",
+      "repo": "https://github.com/amitkuzi/skills/tree/main/adhd-hebrew",
+      "license": "MIT",
+      "year": 2026,
+      "featured": true,
+      "status": "live"
+    },
+    {
+      "id": "csharp-standards",
+      "name": "csharp-standards",
+      "tagline": "Team coding standards for C#/.NET",
+      "description": "Manager/Engine/Accessor three-layer architecture, immutable DTOs, async and CancellationToken rules, structured logging, and a test-plan-first review workflow, applied automatically to any C#/.NET task.",
+      "repo": "https://github.com/amitkuzi/skills/tree/main/csharp-standards",
+      "license": "MIT",
+      "year": 2026,
+      "featured": true,
+      "status": "live"
+    },
+    {
+      "id": "report",
+      "name": "report",
+      "tagline": "Structured, sourced Hebrew reports",
+      "description": "Produces a dated, sourced Hebrew report (status / research / decision / post-mortem / periodic) from connected tools and the web, with claims separated into verified / estimated / gap.",
+      "repo": "https://github.com/amitkuzi/skills/tree/main/report",
+      "license": "MIT",
+      "year": 2026,
+      "featured": true,
+      "status": "live"
+    },
+    {
+      "id": "grill-me",
+      "name": "grill-me",
+      "tagline": "A relentless interview that stress-tests a plan before you act",
+      "description": "Maps a decision as a design tree and works it in rounds, asking every settled-prerequisite question at once with a recommended answer, until nothing is left silently assumed.",
+      "repo": "https://github.com/amitkuzi/skills/tree/main/grill-me",
+      "license": "MIT, original work by Matt Pocock (mattpocock/skills)",
+      "year": 2026,
+      "featured": false,
+      "status": "live"
+    }
+  ]
+}

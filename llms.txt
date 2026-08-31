@@ -1,8 +1,9 @@
 # Amit Kuzi
 
 Software Architect & Engineering Consultant based in Holon, Israel. Building software since 1997.
-This host (amitkuzi.github.io) carries the working artifacts — live tools, source repositories and
-published 3D models. The writing, case studies and contact details live at https://amitkuzi.com
+This host (amitkuzi.github.io) carries the working artifacts — live tools, source repositories,
+Agent Skills and published 3D models. The writing, case studies and contact details live at
+https://amitkuzi.com
 
 The canonical entity record is https://amitkuzi.com/#amit-kuzi — every schema block on this host
 points there rather than declaring a competing identity.
@@ -20,6 +21,12 @@ points there rather than declaring a competing identity.
 ## Source repositories
 
 Listed in projects.json on this host. Own repositories only, no forks.
+
+## Agent Skills
+
+Listed in skills.json on this host and at https://github.com/amitkuzi/skills. Reusable Agent Skills
+for Claude (and any Agent-Skills-compatible platform): adhd-hebrew, csharp-standards, report,
+grill-me. Each folder has its own SKILL.md, README and LICENSE.
 
 ## Published 3D models
 

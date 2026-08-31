@@ -11,8 +11,8 @@ A single static page — no build step, no dependencies, no runtime fetches. It 
 404 on the root of a hostname that carries the exact brand name, and to point every asset back at
 one entity anchor: `https://amitkuzi.com/#amit-kuzi`.
 
-Three sections: **Tools** (the live apps), **Source** (own repositories, no forks), **Printed**
-(published 3D models).
+Four sections: **Tools** (the live apps), **Source** (own repositories, no forks), **Printed**
+(published 3D models), **Skills** (Agent Skills for Claude and compatible platforms).
 
 ## Files
 
@@ -21,6 +21,7 @@ Three sections: **Tools** (the live apps), **Source** (own repositories, no fork
 | `index.html` | The whole page. Styles inline, toolpath thumbnails drawn in ~40 lines of JS. |
 | `projects.json` | Source of truth for the Source section. `status`: `live` / `hold` / `hidden`. |
 | `models.json` | Source of truth for the Printed section. One entry per design, `links` is an array. |
+| `skills.json` | Source of truth for the Skills section. Mirrors github.com/amitkuzi/skills. |
 | `robots.txt` | **Host-root** robots — governs `/OneWall/` and `/localViewer/` too. |
 | `sitemap.xml` | All four indexable URLs on this host. |
 | `llms.txt` | Plain-language summary for language models. |
