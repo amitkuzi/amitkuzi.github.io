@@ -22,6 +22,7 @@
       "thumb": "./assets/models/onewall.webp",
       "links": [
         { "platform": "MakerWorld", "url": "https://makerworld.com/en/models/2948815-onewall-vase-mode-bin-container-customizer" },
+        { "platform": "MakerWorld MakerLab", "url": "https://makerworld.com/en/makerlab/parametricModelMaker?designId=2948815" },
         { "platform": "Printables", "url": "https://www.printables.com/model/1785076-onewall-vase-mode-bins-gridfinity-creator-parametr" }
       ],
       "featured": true
