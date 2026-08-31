@@ -17,7 +17,6 @@
       "repo": "https://github.com/amitkuzi/OneWall",
       "live": "https://amitkuzi.github.io/OneWall/",
       "caseStudy": "https://amitkuzi.com/projects/onewall/",
-      "makerlab": "https://makerworld.com/en/makerlab/parametricModelMaker?designId=2948815",
       "language": "JavaScript",
       "stack": ["OpenSCAD", "Three.js", "CSG", "STL"],
       "year": 2026,

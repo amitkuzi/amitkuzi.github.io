@@ -12,8 +12,7 @@ points there rather than declaring a competing identity.
 - **OneWall** — https://amitkuzi.github.io/OneWall/ — browser-based parametric customizer for
   vase-mode bins/containers and Gridfinity bins and baseplates. OpenSCAD model re-implemented in
   JavaScript, Three.js preview, client-side CSG, export to STL / STEP / 3MF.
-  Docs: https://amitkuzi.github.io/OneWall/about.html · Source: https://github.com/amitkuzi/OneWall ·
-  Also published as a MakerWorld MakerLab customizer: https://makerworld.com/en/makerlab/parametricModelMaker?designId=2948815
+  Docs: https://amitkuzi.github.io/OneWall/about.html · Source: https://github.com/amitkuzi/OneWall
 - **localViewer** — https://amitkuzi.github.io/localViewer/ — local-first viewer for Markdown,
   YAML, CSV, STL, 3MF, STEP, OpenSCAD and images. Files are parsed in the browser and never
   uploaded. PWA, works offline. Source: https://github.com/amitkuzi/localViewer
