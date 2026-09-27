@@ -5,8 +5,9 @@
 <!-- amitkuzi.github.io hub — T-53.
      Job-title string is canonical per T-44: "Software Architect & Engineering Consultant".
      It appears in three places: <title>, .role, and the Person JSON-LD below. Keep them identical.
-     projects.json / models.json are the source of truth for this page's content; the markup is
-     written out statically on purpose, so the page is crawlable without JavaScript.
+     projects.json / models.json are the source of truth for their sections. The Skills markup is
+     generated from public SKILL.md frontmatter in github.com/amitkuzi/skills, branch main.
+     All markup remains static so the page is crawlable without JavaScript.
      Model thumbnails are drawn as toolpath contours (design-philosophy-continuous-wall.md) —
      no platform CDN hotlinks, no referrer leak. -->
 <title>Amit Kuzi — Software Architect &amp; Engineering Consultant</title>
@@ -391,20 +392,28 @@ footer .fr{text-align:end;font-family:var(--font-display);font-weight:600;font-s
   <section id="skills">
     <div class="shead"><div class="idx">04</div><h2>Skills</h2><div class="count">Agent Skills — for Claude and compatible platforms</div></div>
     <div class="repos">
-      <div class="repo"><div class="rn"><a href="https://github.com/amitkuzi/skills/tree/main/adhd-hebrew">adhd-hebrew</a></div>
-        <div class="rd">BLUF-first, scannable Hebrew response formatting for an ADHD reader, with RTL-safe code/paths and keyboard-layout decoding.</div>
-        <div class="rm">Agent Skill · MIT · <b>2026</b></div></div>
+      <!-- skills:auto:start -->
       <div class="repo"><div class="rn"><a href="https://github.com/amitkuzi/skills/tree/main/csharp-standards">csharp-standards</a></div>
-        <div class="rd">Team coding standards for C#/.NET — layered architecture, immutable DTOs, async rules, structured logging, test-plan-first workflow.</div>
-        <div class="rm">Agent Skill · MIT · <b>2026</b></div></div>
-      <div class="repo"><div class="rn"><a href="https://github.com/amitkuzi/skills/tree/main/report">report</a></div>
-        <div class="rd">Structured, sourced Hebrew reports — status, research, decision, post-mortem, periodic — from connected tools and the web.</div>
-        <div class="rm">Agent Skill · MIT · <b>2026</b></div></div>
+        <div class="rd">Team coding standards for .NET/C# work — the Manager/Engine/Accessor three-layer architecture, immutable records and DTOs, async and CancellationToken rules, structured logging, testing requirements, and the counter-model review workflow. Use this skill for ANY task that writes, refactors, reviews, or plans C#/.NET code, adds a service or interface, touches data access, or produces a test plan — even when the user does not mention standards, architecture, or conventions explicitly.</div>
+        <div class="rm">Agent Skill · Public · <b>main</b></div></div>
       <div class="repo"><div class="rn"><a href="https://github.com/amitkuzi/skills/tree/main/grill-me">grill-me</a></div>
-        <div class="rd">A relentless, round-by-round interview that stress-tests a plan or decision before you act on it.</div>
-        <div class="rm">Agent Skill · MIT, Matt Pocock · <b>2026</b></div></div>
+        <div class="rd">A relentless interview to sharpen a plan, design, decision or idea. Use when the user says &quot;grill me&quot;, &quot;grill me about X&quot;, or wants their thinking stress-tested before acting.</div>
+        <div class="rm">Agent Skill · Public · <b>main</b></div></div>
+      <div class="repo"><div class="rn"><a href="https://github.com/amitkuzi/skills/tree/main/adhd-hebrew">hebrew-adhd</a></div>
+        <div class="rd">Ultra-concise, BLUF-first, scannable Hebrew responses optimized for an ADHD reader. Use for conversational answers, explanations, summaries, comparisons, and recommendations. Also decodes text typed in the wrong Hebrew/English keyboard layout. Do NOT use for code output, formal deliverables written to inbox/, or long-form documents.</div>
+        <div class="rm">Agent Skill · Public · <b>main</b></div></div>
+      <div class="repo"><div class="rn"><a href="https://github.com/amitkuzi/skills/tree/main/report">report</a></div>
+        <div class="rd">Produce a structured Hebrew report — status, research, comparison/decision, post-mortem, or periodic summary — gathered from connected tools and the web, delivered as a Markdown document in inbox/. Use whenever the user asks for a דוח / report / סקירה / סיכום מצב, or invokes /report by name. A short factual question is not a report; answer it directly instead.</div>
+        <div class="rm">Agent Skill · Public · <b>main</b></div></div>
+      <div class="repo"><div class="rn"><a href="https://github.com/amitkuzi/skills/tree/main/slant3d">slant3d</a></div>
+        <div class="rd">Review and adapt STEP/STP, STL, and 3MF models for repeatable FDM production using FreeCAD and Blender. Use when a CAD model must be assessed, redesigned, repaired, oriented, or prepared for reliable batch printing.</div>
+        <div class="rm">Agent Skill · Public · <b>main</b></div></div>
+      <div class="repo"><div class="rn"><a href="https://github.com/amitkuzi/skills/tree/main/stage-gate">stage-gate</a></div>
+        <div class="rd">Mandatory end-of-stage checkpoint for any multi-stage development mission. Runs an independent adversarial review AND a usability/main-use-case pass, scores 0-100, fixes and re-tests in a loop until the score clears 90 with no blocker/critical, logs every iteration, then runs a live demo and stops for the human&#39;s explicit approval before the next stage starts. Use automatically at the end of every development stage/milestone — do not wait to be asked.</div>
+        <div class="rm">Agent Skill · Public · <b>main</b></div></div>
+      <!-- skills:auto:end -->
     </div>
-    <div class="note">Tracked in skills.json — full source, install steps and a usage example for each in <a href="https://github.com/amitkuzi/skills">github.com/amitkuzi/skills</a></div>
+    <div class="note">Automatically synced from each public skill's SKILL.md description on the <a href="https://github.com/amitkuzi/skills/tree/main">main branch of github.com/amitkuzi/skills</a></div>
   </section>
 
 </main>

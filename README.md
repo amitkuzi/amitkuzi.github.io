@@ -21,15 +21,17 @@ Four sections: **Tools** (the live apps), **Source** (own repositories, no forks
 | `index.html` | The whole page. Styles inline, toolpath thumbnails drawn in ~40 lines of JS. |
 | `projects.json` | Source of truth for the Source section. `status`: `live` / `hold` / `hidden`. |
 | `models.json` | Source of truth for the Printed section. One entry per design, `links` is an array. |
-| `skills.json` | Source of truth for the Skills section. Mirrors github.com/amitkuzi/skills. |
+| `skills.json` | Generated catalogue for the Skills section, synced from github.com/amitkuzi/skills. |
+| `scripts/sync-skills.mjs` | Fetches top-level public skills from branch `main` and regenerates the catalogue and HTML cards. |
 | `robots.txt` | **Host-root** robots — governs `/OneWall/` and `/localViewer/` too. |
 | `sitemap.xml` | All four indexable URLs on this host. |
 | `llms.txt` | Plain-language summary for language models. |
 
 ## Rules that keep this page honest
 
-- The markup is written out statically. The JSON files are the source of truth for humans editing
-  the page; nothing is fetched at run time, so the page is fully crawlable without JavaScript.
+- The markup is written out statically. Projects and models are hand-edited; Skills are regenerated
+  every six hours by GitHub Actions from each top-level `SKILL.md` on `amitkuzi/skills@main`.
+  Nothing is fetched at run time, so the page is fully crawlable without JavaScript.
 - **Ember (`#e4632d`) appears once per screen.** Launch buttons and section numbers. Nothing else.
 - **No engagement counts** on models — a hardcoded download count is wrong the day after it is written.
 - **No hotlinked platform thumbnails.** Thumbnails are drawn as toolpath contours.
@@ -42,4 +44,18 @@ Four sections: **Tools** (the live apps), **Source** (own repositories, no forks
 
 Settings → Pages → Source: `main`, folder `/ (root)`. Then add the property to Search Console
 (HTML-file verification, committed here).
+
+## Sync Skills
+
+The `Sync public skills` workflow runs every six hours and can also be started manually. It reads
+the `name` and `description` fields from every top-level `<skill>/SKILL.md` on the public repository's
+`main` branch, updates `skills.json` and the marked block in `index.html`, and commits only when the
+generated content changed.
+
+Run the same checks locally with:
+
+```powershell
+node --test scripts/sync-skills.test.mjs
+node scripts/sync-skills.mjs
+```
 "# amitkuzi.github.io" 
