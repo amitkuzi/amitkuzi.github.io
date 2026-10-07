@@ -5,6 +5,7 @@ import { join } from 'node:path';
 import test from 'node:test';
 import {
   findPublicSkillPaths,
+  loadPublicSkills,
   parseSkillFrontmatter,
   renderSkillCards,
   replaceGeneratedSkills,
@@ -45,11 +46,12 @@ test('renderSkillCards escapes remote content', () => {
     name: '<unsafe>',
     description: 'A & B',
     repo: 'https://example.com/?a=1&b=2'
-  }]);
+  }], '<branch>');
 
   assert.match(html, /&lt;unsafe&gt;/);
   assert.match(html, /A &amp; B/);
   assert.doesNotMatch(html, /<unsafe>/);
+  assert.match(html, /<b>&lt;branch&gt;<\/b>/);
 });
 
 test('replaceGeneratedSkills replaces only the marked region', () => {
@@ -59,7 +61,7 @@ test('replaceGeneratedSkills replaces only the marked region', () => {
   assert.equal(updated, `before ${'<!-- skills:auto:start -->'}\nnew\n      ${'<!-- skills:auto:end -->'} after`);
 });
 
-test('syncSkills updates HTML and JSON from a GitHub tree response', async () => {
+test('syncSkills reads the requested main branch and pins one commit for HTML and JSON', async () => {
   const rootDir = await mkdtemp(join(tmpdir(), 'skills-sync-'));
   await writeFile(
     join(rootDir, 'index.html'),
@@ -67,16 +69,21 @@ test('syncSkills updates HTML and JSON from a GitHub tree response', async () =>
     'utf8'
   );
 
+  const commitSha = 'a'.repeat(40);
   const responses = new Map([
-    ['https://api.github.com/repos/amitkuzi/skills/git/trees/main?recursive=1', {
+    ['https://api.github.com/repos/amitkuzi/skills/commits/main', {
+      ok: true,
+      json: async () => ({ sha: commitSha })
+    }],
+    [`https://api.github.com/repos/amitkuzi/skills/git/trees/${commitSha}?recursive=1`, {
       ok: true,
       json: async () => ({
-        sha: 'abc123',
+        sha: 'b'.repeat(40),
         truncated: false,
         tree: [{ path: 'demo/SKILL.md', type: 'blob' }]
       })
     }],
-    ['https://raw.githubusercontent.com/amitkuzi/skills/main/demo/SKILL.md', {
+    [`https://raw.githubusercontent.com/amitkuzi/skills/${commitSha}/demo/SKILL.md`, {
       ok: true,
       text: async () => '---\nname: demo\ndescription: Demo description\n---\n'
     }]
@@ -96,9 +103,21 @@ test('syncSkills updates HTML and JSON from a GitHub tree response', async () =>
 
     assert.match(index, /Demo description/);
     assert.equal(repeatedIndex, index);
-    assert.equal(catalogue.sourceCommit, 'abc123');
+    assert.equal(catalogue.sourceCommit, commitSha);
+    assert.equal(catalogue.branch, 'main');
     assert.equal(catalogue.skills[0].name, 'demo');
+    assert.equal(catalogue.skills[0].repo, 'https://github.com/amitkuzi/skills/tree/main/demo');
+    assert.match(index, /<b>main<\/b>/);
   } finally {
     await rm(rootDir, { recursive: true, force: true });
   }
+});
+
+test('loadPublicSkills rejects an invalid commit before fetching a tree', async () => {
+  const urls = [];
+  await assert.rejects(loadPublicSkills(async (url) => {
+    urls.push(url);
+    return { ok: true, json: async () => ({}) };
+  }), /no valid commit SHA/);
+  assert.deepEqual(urls, ['https://api.github.com/repos/amitkuzi/skills/commits/main']);
 });

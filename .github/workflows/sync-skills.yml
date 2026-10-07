@@ -1,4 +1,4 @@
-name: Sync public skills
+name: Sync skills and pinned repositories
 
 on:
   schedule:
@@ -20,19 +20,23 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - name: Test the sync script
-        run: node --test scripts/sync-skills.test.mjs
+      - name: Test the sync scripts
+        run: node --test scripts/sync-skills.test.mjs scripts/sync-pinned.test.mjs
       - name: Sync skills from amitkuzi/skills
         run: node scripts/sync-skills.mjs
+      - name: Sync public GitHub profile pins
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: node scripts/sync-pinned.mjs
       - name: Commit changes
         shell: bash
         run: |
-          if git diff --quiet -- index.html skills.json; then
-            echo "Skills are already up to date."
+          if git diff --quiet -- index.html skills.json pinned.json; then
+            echo "Skills and pins are already up to date."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add index.html skills.json
-          git commit -m "chore: sync public skills"
+          git add index.html skills.json pinned.json
+          git commit -m "chore: sync public skills and profile pins"
           git push

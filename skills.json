@@ -1,7 +1,7 @@
 {
   "source": "https://github.com/amitkuzi/skills",
   "branch": "main",
-  "sourceCommit": "bc94987a9cf7fd432a40f3130625c00e444c2e02",
+  "sourceCommit": "cbeed922edcdf134f03f44f6a30528ccccf0d25c",
   "skills": [
     {
       "id": "csharp-standards",
@@ -38,6 +38,12 @@
       "name": "stage-gate",
       "description": "Mandatory end-of-stage checkpoint for any multi-stage development mission. Runs an independent adversarial review AND a usability/main-use-case pass, scores 0-100, fixes and re-tests in a loop until the score clears 90 with no blocker/critical, logs every iteration, then runs a live demo and stops for the human's explicit approval before the next stage starts. Use automatically at the end of every development stage/milestone — do not wait to be asked.",
       "repo": "https://github.com/amitkuzi/skills/tree/main/stage-gate"
+    },
+    {
+      "id": "visual-manual",
+      "name": "visual-manual",
+      "description": "Create branded visual LEGO/IKEA-style manuals for instructions, installation, assembly, and how-to procedures (הוראות, תהליך התקנה, הרכבה, מדריך), delivering HTML and PDF in Hebrew and English by default. Applies to physical builds and software setup, not requests to edit agent/system instructions.",
+      "repo": "https://github.com/amitkuzi/skills/tree/main/visual-manual"
     }
   ]
 }

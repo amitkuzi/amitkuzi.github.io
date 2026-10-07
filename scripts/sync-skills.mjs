@@ -4,10 +4,8 @@ import { fileURLToPath, pathToFileURL } from 'node:url';
 
 const OWNER = 'amitkuzi';
 const REPOSITORY = 'skills';
+const API_ROOT = `https://api.github.com/repos/${OWNER}/${REPOSITORY}`;
 const BRANCH = 'main';
-const TREE_URL = `https://api.github.com/repos/${OWNER}/${REPOSITORY}/git/trees/${BRANCH}?recursive=1`;
-const RAW_ROOT = `https://raw.githubusercontent.com/${OWNER}/${REPOSITORY}/${BRANCH}`;
-const REPOSITORY_ROOT = `https://github.com/${OWNER}/${REPOSITORY}/tree/${BRANCH}`;
 const START_MARKER = '<!-- skills:auto:start -->';
 const END_MARKER = '<!-- skills:auto:end -->';
 
@@ -79,14 +77,15 @@ export function escapeHtml(value) {
     .replaceAll("'", '&#39;');
 }
 
-export function renderSkillCards(skills) {
+export function renderSkillCards(skills, branch) {
+  const branchLabel = escapeHtml(branch);
   return skills.map((skill) => {
     const name = escapeHtml(skill.name);
     const description = escapeHtml(skill.description);
     const repo = escapeHtml(skill.repo);
     return `      <div class="repo"><div class="rn"><a href="${repo}">${name}</a></div>\n` +
       `        <div class="rd">${description}</div>\n` +
-      '        <div class="rm">Agent Skill · Public · <b>main</b></div></div>';
+      `        <div class="rm">Agent Skill · Public · <b>${branchLabel}</b></div></div>`;
   }).join('\n');
 }
 
@@ -125,31 +124,37 @@ async function fetchText(fetchImpl, url) {
 }
 
 export async function loadPublicSkills(fetchImpl = fetch) {
-  const tree = await fetchJson(fetchImpl, TREE_URL);
+  const branch = BRANCH;
+  const commit = await fetchJson(fetchImpl, `${API_ROOT}/commits/${encodeURIComponent(branch)}`);
+  const sourceCommit = commit.sha;
+  if (typeof sourceCommit !== 'string' || !/^[a-f0-9]{40}$/i.test(sourceCommit)) {
+    throw new Error('GitHub commit response has no valid commit SHA.');
+  }
+  const tree = await fetchJson(fetchImpl, `${API_ROOT}/git/trees/${sourceCommit}?recursive=1`);
   if (tree.truncated) {
     throw new Error('GitHub returned a truncated repository tree; refusing a partial sync.');
   }
 
   const paths = findPublicSkillPaths(tree.tree);
   if (paths.length === 0) {
-    throw new Error('No top-level public skills were found on branch main.');
+    throw new Error(`No top-level public skills were found on branch ${branch}.`);
   }
 
   const skills = await Promise.all(paths.map(async (skillPath) => {
     const folder = skillPath.split('/')[0];
-    const source = await fetchText(fetchImpl, `${RAW_ROOT}/${skillPath}`);
+    const source = await fetchText(fetchImpl, `https://raw.githubusercontent.com/${OWNER}/${REPOSITORY}/${sourceCommit}/${skillPath}`);
     const metadata = parseSkillFrontmatter(source, folder);
     return {
       id: folder,
       ...metadata,
-      repo: `${REPOSITORY_ROOT}/${encodeURIComponent(folder)}`
+      repo: `https://github.com/${OWNER}/${REPOSITORY}/tree/${encodeURIComponent(branch)}/${encodeURIComponent(folder)}`
     };
   }));
 
   return {
     source: `https://github.com/${OWNER}/${REPOSITORY}`,
-    branch: BRANCH,
-    sourceCommit: tree.sha,
+    branch,
+    sourceCommit,
     skills: skills.sort((left, right) => left.name.localeCompare(right.name))
   };
 }
@@ -160,7 +165,7 @@ export async function syncSkills({ fetchImpl = fetch, rootDir } = {}) {
   const skillsPath = resolve(projectRoot, 'skills.json');
   const catalogue = await loadPublicSkills(fetchImpl);
   const index = await readFile(indexPath, 'utf8');
-  const updatedIndex = replaceGeneratedSkills(index, renderSkillCards(catalogue.skills));
+  const updatedIndex = replaceGeneratedSkills(index, renderSkillCards(catalogue.skills, catalogue.branch));
 
   await Promise.all([
     writeFile(indexPath, updatedIndex, 'utf8'),

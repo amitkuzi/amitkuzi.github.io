@@ -20,13 +20,14 @@ points there rather than declaring a competing identity.
 
 ## Source repositories
 
-Listed in projects.json on this host. Own repositories only, no forks.
+Listed in pinned.json on this host. Public repositories pinned on Amit's GitHub overview,
+in profile order. Missing repository descriptions are disclosed; pinned forks are identified.
 
 ## Agent Skills
 
 Listed in skills.json on this host and at https://github.com/amitkuzi/skills. Reusable Agent Skills
-for Claude (and any Agent-Skills-compatible platform): adhd-hebrew, csharp-standards, report,
-grill-me. Each folder has its own SKILL.md, README and LICENSE.
+for Claude (and any Agent-Skills-compatible platform), synchronized from the repository's main
+branch. Each folder has its own SKILL.md, README and LICENSE.
 
 ## Published 3D models
 

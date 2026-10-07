@@ -5,7 +5,7 @@
 <!-- amitkuzi.github.io hub — T-53.
      Job-title string is canonical per T-44: "Software Architect & Engineering Consultant".
      It appears in three places: <title>, .role, and the Person JSON-LD below. Keep them identical.
-     projects.json / models.json are the source of truth for their sections. The Skills markup is
+     pinned.json / models.json are the source of truth for Source / Printed. The Skills markup is
      generated from public SKILL.md frontmatter in github.com/amitkuzi/skills, branch main.
      All markup remains static so the page is crawlable without JavaScript.
      Model thumbnails are drawn as toolpath contours (design-philosophy-continuous-wall.md) —
@@ -327,22 +327,27 @@ footer .fr{text-align:end;font-family:var(--font-display);font-weight:600;font-s
   </section>
 
   <section>
-    <div class="shead"><div class="idx">02</div><h2>Source</h2><div class="count">Own repositories — no forks</div></div>
+    <div class="shead"><div class="idx">02</div><h2>Source</h2><div class="count">Pinned on GitHub</div></div>
     <div class="repos">
-      <div class="repo"><div class="rn"><a href="https://github.com/amitkuzi/amitkuzi.identity.RavenDB">amitkuzi.identity.RavenDB</a></div>
-        <div class="rd">RavenDB as the UserStore and RoleStore behind Microsoft Identity, in place of Entity Framework.</div>
-        <div class="rm">C# · .NET · <b>2021</b></div></div>
-      <div class="repo"><div class="rn"><a href="https://github.com/amitkuzi/xpathEval">xpathEval</a></div>
-        <div class="rd">Write an XPath expression, see what it selects out of a sample document, without a full XML editor.</div>
-        <div class="rm">C# · XPath · <b>2019</b></div></div>
-      <div class="repo"><div class="rn"><a href="https://github.com/amitkuzi/AmitKuzi.3dPrint.Modular">AmitKuzi.3dPrint.Modular</a></div>
-        <div class="rd">Modular parametric parts for FDM.</div>
-        <div class="rm">Parametric CAD · <b>2026</b></div></div>
-      <div class="repo"><div class="rn"><a href="https://github.com/amitkuzi/amitkuzi.utils">amitkuzi.utils</a></div>
-        <div class="rd">Lightweight C#/.NET TaskTimer for recurring asynchronous task execution with delay, timeout, cancellation, and completion callbacks.</div>
-        <div class="rm">C# · .NET · <b>2016</b></div></div>
+      <!-- source:auto:start -->
+      <div class="repo"><div class="rn"><a href="https://github.com/amitkuzi/amitkuzi.github.io">amitkuzi.github.io</a></div>
+        <div class="rd">No description provided on GitHub.</div>
+        <div class="rm">HTML · <b>Pinned</b></div></div>
+      <div class="repo"><div class="rn"><a href="https://github.com/amitkuzi/kuziSlicer">kuziSlicer</a></div>
+        <div class="rd">No description provided on GitHub.</div>
+        <div class="rm">TypeScript · <b>Pinned</b></div></div>
+      <div class="repo"><div class="rn"><a href="https://github.com/amitkuzi/localViewer">localViewer</a></div>
+        <div class="rd">localViewer</div>
+        <div class="rm">JavaScript · <b>Pinned</b></div></div>
+      <div class="repo"><div class="rn"><a href="https://github.com/amitkuzi/OneWall">OneWall</a></div>
+        <div class="rd">No description provided on GitHub.</div>
+        <div class="rm">JavaScript · <b>Pinned</b></div></div>
+      <div class="repo"><div class="rn"><a href="https://github.com/amitkuzi/skills">skills</a></div>
+        <div class="rd">No description provided on GitHub.</div>
+        <div class="rm">Python · <b>Pinned</b></div></div>
+      <!-- source:auto:end -->
     </div>
-    <div class="note">Tracked in projects.json — 12 own repositories, 4 shown, the rest held pending descriptions</div>
+    <div class="note">Automatically synced to pinned.json from the public repositories pinned on <a href="https://github.com/amitkuzi">Amit's GitHub overview</a>, in profile order.</div>
   </section>
 
   <section>
@@ -410,6 +415,9 @@ footer .fr{text-align:end;font-family:var(--font-display);font-weight:600;font-s
         <div class="rm">Agent Skill · Public · <b>main</b></div></div>
       <div class="repo"><div class="rn"><a href="https://github.com/amitkuzi/skills/tree/main/stage-gate">stage-gate</a></div>
         <div class="rd">Mandatory end-of-stage checkpoint for any multi-stage development mission. Runs an independent adversarial review AND a usability/main-use-case pass, scores 0-100, fixes and re-tests in a loop until the score clears 90 with no blocker/critical, logs every iteration, then runs a live demo and stops for the human&#39;s explicit approval before the next stage starts. Use automatically at the end of every development stage/milestone — do not wait to be asked.</div>
+        <div class="rm">Agent Skill · Public · <b>main</b></div></div>
+      <div class="repo"><div class="rn"><a href="https://github.com/amitkuzi/skills/tree/main/visual-manual">visual-manual</a></div>
+        <div class="rd">Create branded visual LEGO/IKEA-style manuals for instructions, installation, assembly, and how-to procedures (הוראות, תהליך התקנה, הרכבה, מדריך), delivering HTML and PDF in Hebrew and English by default. Applies to physical builds and software setup, not requests to edit agent/system instructions.</div>
         <div class="rm">Agent Skill · Public · <b>main</b></div></div>
       <!-- skills:auto:end -->
     </div>

@@ -1,0 +1,45 @@
+{
+  "source": "https://github.com/amitkuzi",
+  "repositories": [
+    {
+      "nameWithOwner": "amitkuzi/amitkuzi.github.io",
+      "name": "amitkuzi.github.io",
+      "description": null,
+      "repo": "https://github.com/amitkuzi/amitkuzi.github.io",
+      "language": "HTML",
+      "isFork": false
+    },
+    {
+      "nameWithOwner": "amitkuzi/kuziSlicer",
+      "name": "kuziSlicer",
+      "description": null,
+      "repo": "https://github.com/amitkuzi/kuziSlicer",
+      "language": "TypeScript",
+      "isFork": false
+    },
+    {
+      "nameWithOwner": "amitkuzi/localViewer",
+      "name": "localViewer",
+      "description": "localViewer",
+      "repo": "https://github.com/amitkuzi/localViewer",
+      "language": "JavaScript",
+      "isFork": false
+    },
+    {
+      "nameWithOwner": "amitkuzi/OneWall",
+      "name": "OneWall",
+      "description": null,
+      "repo": "https://github.com/amitkuzi/OneWall",
+      "language": "JavaScript",
+      "isFork": false
+    },
+    {
+      "nameWithOwner": "amitkuzi/skills",
+      "name": "skills",
+      "description": null,
+      "repo": "https://github.com/amitkuzi/skills",
+      "language": "Python",
+      "isFork": false
+    }
+  ]
+}
