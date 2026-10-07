@@ -7,6 +7,7 @@ on:
 
 permissions:
   contents: write
+  pages: write
 
 concurrency:
   group: sync-public-skills
@@ -29,10 +30,12 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: node scripts/sync-pinned.mjs
       - name: Commit changes
+        id: commit
         shell: bash
         run: |
           if git diff --quiet -- index.html skills.json pinned.json; then
             echo "Skills and pins are already up to date."
+            echo "changed=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
           git config user.name "github-actions[bot]"
@@ -40,3 +43,10 @@ jobs:
           git add index.html skills.json pinned.json
           git commit -m "chore: sync public skills and profile pins"
           git push
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+      - name: Request GitHub Pages build
+        if: steps.commit.outputs.changed == 'true' || github.event_name == 'workflow_dispatch'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh api --method POST "repos/${{ github.repository }}/pages/builds" --jq '{status: .status, url: .url}'

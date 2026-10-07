@@ -57,8 +57,14 @@ generated content changed. A single commit SHA pins both the tree and every fetc
 `skills.json.sourceCommit` records that commit, while card links and badges show `main`.
 
 The same workflow refreshes `pinned.json` and the marked Source block through GitHub GraphQL,
-using the runner's `gh` CLI and built-in `GH_TOKEN` only for that step. Local pin sync uses existing
+using the runner's `gh` CLI and built-in `GH_TOKEN`, scoped to the authenticated pin-sync and Pages-build steps. Local pin sync uses existing
 `gh` authentication (or `GH_TOKEN`/`GITHUB_TOKEN`). Credentials are never written into the catalogue.
+
+Because pushes made with `GITHUB_TOKEN` do not trigger Pages builds, the workflow explicitly requests
+a GitHub Pages build after a changed catalogue is pushed. Manual workflow runs request a build even
+when the catalogue is unchanged, so the existing legacy `main` / root publication path can be verified.
+The job uses only `contents: write` and `pages: write`; no additional secret or publishing source change
+is required. See [GitHub's token documentation](https://docs.github.com/en/actions/concepts/security/github_token).
 
 Run the same checks locally with:
 
