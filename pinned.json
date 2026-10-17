@@ -4,7 +4,7 @@
     {
       "nameWithOwner": "amitkuzi/amitkuzi.github.io",
       "name": "amitkuzi.github.io",
-      "description": null,
+      "description": "GitHub Pages hub for Amit Kuzi, Software Architect & Engineering Consultant in Holon, Israel. Links the live apps, source repos and published 3D models to amitkuzi.com.",
       "repo": "https://github.com/amitkuzi/amitkuzi.github.io",
       "language": "HTML",
       "isFork": false
@@ -12,7 +12,7 @@
     {
       "nameWithOwner": "amitkuzi/kuziSlicer",
       "name": "kuziSlicer",
-      "description": null,
+      "description": "Electron desktop app for loading 3D models, slicing, previewing G-code and sending validated print jobs to supported printers on a trusted LAN. Built with TypeScript.",
       "repo": "https://github.com/amitkuzi/kuziSlicer",
       "language": "TypeScript",
       "isFork": false
@@ -20,7 +20,7 @@
     {
       "nameWithOwner": "amitkuzi/localViewer",
       "name": "localViewer",
-      "description": "localViewer",
+      "description": "Local-first viewer for Markdown, YAML, CSV, STL, 3MF, STEP, OpenSCAD and images. Files never leave your browser.",
       "repo": "https://github.com/amitkuzi/localViewer",
       "language": "JavaScript",
       "isFork": false
@@ -28,7 +28,7 @@
     {
       "nameWithOwner": "amitkuzi/OneWall",
       "name": "OneWall",
-      "description": null,
+      "description": "Parametric vase-mode bin, container and Gridfinity customizer that runs in the browser. Export STL, STEP and 3MF.",
       "repo": "https://github.com/amitkuzi/OneWall",
       "language": "JavaScript",
       "isFork": false
@@ -36,7 +36,7 @@
     {
       "nameWithOwner": "amitkuzi/skills",
       "name": "skills",
-      "description": null,
+      "description": "Amit Kuzi's reusable Agent Skills for Claude and other compatible tools: Hebrew ADHD-friendly formatting, C#/.NET standards, mission orchestration, QA and more.",
       "repo": "https://github.com/amitkuzi/skills",
       "language": "Python",
       "isFork": false
