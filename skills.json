@@ -1,7 +1,7 @@
 {
   "source": "https://github.com/amitkuzi/skills",
   "branch": "main",
-  "sourceCommit": "dd0e836523dea0c339d188c6c63749d06e80bbd3",
+  "sourceCommit": "2710b8cbcad941547461ccb5bb729f970653c870",
   "skills": [
     {
       "id": "csharp-standards",
@@ -22,6 +22,12 @@
       "repo": "https://github.com/amitkuzi/skills/tree/main/adhd-hebrew"
     },
     {
+      "id": "refactor",
+      "name": "refactor",
+      "description": "Behavior-preserving refactoring that makes code simple, human, readable, debuggable and maintainable — Clean Code and SOLID (Uncle Bob) applied to every function, public/main/interface functions turned into story-like orchestration functions built from small well-named calls, pure \"engine\" logic separated from \"accessor\" I/O (DB, storage, network, screen rendering), and repeated code unified into small helpers. Use whenever the user asks to refactor, clean up, simplify, humanize, untangle, \"make readable/maintainable\", split a long function, remove duplication, or review code for clean-code/SOLID — in any language — even if they don't name this skill.",
+      "repo": "https://github.com/amitkuzi/skills/tree/main/refactor"
+    },
+    {
       "id": "report",
       "name": "report",
       "description": "Produce a structured Hebrew report — status, research, comparison/decision, post-mortem, or periodic summary — gathered from connected tools and the web, delivered as a Markdown document in inbox/. Use whenever the user asks for a דוח / report / סקירה / סיכום מצב, or invokes /report by name. A short factual question is not a report; answer it directly instead.",
@@ -36,7 +42,7 @@
     {
       "id": "stage-gate",
       "name": "stage-gate",
-      "description": "Mandatory end-of-stage checkpoint for any multi-stage development mission. Runs an independent adversarial review AND a usability/main-use-case pass, scores 0-100, fixes and re-tests in a loop until the score clears 90 with no blocker/critical, logs every iteration, then runs a live demo and stops for the human's explicit approval before the next stage starts. Use automatically at the end of every development stage/milestone — do not wait to be asked.",
+      "description": "Mandatory end-of-stage checkpoint for any multi-stage development mission. Runs a behavior-preserving refactor pass (the `refactor` skill) on the stage's code, then an independent adversarial review AND a usability/main-use-case pass, scores 0-100, fixes and re-tests in a loop until the score clears 90 with no blocker/critical, logs every iteration, then runs a live demo and stops for the human's explicit approval before the next stage starts. Use automatically at the end of every development stage/milestone — do not wait to be asked.",
       "repo": "https://github.com/amitkuzi/skills/tree/main/stage-gate"
     },
     {
