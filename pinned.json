@@ -2,14 +2,6 @@
   "source": "https://github.com/amitkuzi",
   "repositories": [
     {
-      "nameWithOwner": "amitkuzi/amitkuzi.github.io",
-      "name": "amitkuzi.github.io",
-      "description": "GitHub Pages hub for Amit Kuzi, Software Architect & Engineering Consultant in Holon, Israel. Links the live apps, source repos and published 3D models to amitkuzi.com.",
-      "repo": "https://github.com/amitkuzi/amitkuzi.github.io",
-      "language": "HTML",
-      "isFork": false
-    },
-    {
       "nameWithOwner": "amitkuzi/kuziSlicer",
       "name": "kuziSlicer",
       "description": "Electron desktop app for loading 3D models, slicing, previewing G-code and sending validated print jobs to supported printers on a trusted LAN. Built with TypeScript.",
@@ -38,6 +30,14 @@
       "name": "skills",
       "description": "Amit Kuzi's reusable Agent Skills for Claude and other compatible tools: Hebrew ADHD-friendly formatting, C#/.NET standards, mission orchestration, QA and more.",
       "repo": "https://github.com/amitkuzi/skills",
+      "language": "Python",
+      "isFork": false
+    },
+    {
+      "nameWithOwner": "amitkuzi/ai-toolbox",
+      "name": "ai-toolbox",
+      "description": "Self-maintaining catalog of AI tools plus a cost-ordered decision gate that agents follow before delegating work. Claude Code plugin with a traceable outcome log.",
+      "repo": "https://github.com/amitkuzi/ai-toolbox",
       "language": "Python",
       "isFork": false
     }
