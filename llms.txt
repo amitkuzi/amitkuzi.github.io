@@ -3,7 +3,7 @@
 Software Architect based in Holon, Israel. Building software since 1997.
 Open to software engineering and architecture roles.
 This host (amitkuzi.github.io) carries the working artifacts — live tools, source repositories,
-Agent Skills and two verified original printed designs. The writing, case studies and contact details live at
+Agent Skills and seven original printed designs. The writing, case studies and contact details live at
 https://amitkuzi.com
 
 The canonical entity record is https://amitkuzi.com/#amit-kuzi — every schema block on this host
@@ -33,7 +33,22 @@ non-fork repositories are included; new pins are not added automatically.
   Magnetic purge-waste collector. Includes an STL file and the original ElegooSlicer 3MF project. Original design by Amit Kuzi; Printables license: CC BY 4.0.
   MakerWorld: https://makerworld.com/en/models/3539364-canvas-poop-collector-for-elegoo-centauri-carbon
 
-Authorship verified on 2026-11-06; provenance is recorded in models.json.
+- **OneWall - Vase-Mode Bins + Gridfinity Creator** - https://www.printables.com/model/1785076-onewall-vase-mode-bins-gridfinity-creator-parametr
+  Parametric vase-mode bins and containers generated with OneWall. Adjust dimensions and wall textures, then export a printable model. Original design by Amit Kuzi, corroborated by source history and publication records.
+  MakerWorld: https://makerworld.com/en/models/2948815-onewall-vase-mode-bin-container-customizer
+
+- **Vacuum Valve for Bag or Container** - https://makerworld.com/en/models/2611095-vacuum-valve-for-bag-or-container
+  A printable one-way valve for pulling air out of a storage bag or container. Original design by Amit Kuzi.
+- **Helmet Donut (TPU Edition)** - https://makerworld.com/en/models/2584800-helmet-donut-tpu-edition
+  A TPU ring that keeps a helmet off the floor and off its shell. Original design by Amit Kuzi.
+- **Sleek Under-Desk Headphone Hanger** - https://makerworld.com/en/models/2568791-sleek-under-desk-headphone-hanger
+  A low-profile hanger that mounts under a desk edge and keeps headphones off the work surface. Original design by Amit Kuzi.
+- **Pour-Over Coffee Glass Stabilizer Ring** - https://makerworld.com/en/models/2494091-pour-over-coffee-glass-stabilizer-ring
+  A ring that steadies a pour-over cone on a glass carafe. Original design by Amit Kuzi.
+
+Authorship reviewed on 2026-11-06; Amit Kuzi confirmed authorship of all five earlier designs.
+Source and confirmation provenance is recorded in models.json.
+
 
 ## Agent Skills
 

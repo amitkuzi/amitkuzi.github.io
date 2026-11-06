@@ -17,7 +17,7 @@ Person JSON-LD consistent with the role `Software Architect`.
 | `projects.json` | Existing project registry and app metadata. |
 | `projects-reviewed.json` | Reviewed source repositories and curated descriptions. |
 | `pinned.json` | Reviewed, public, non-fork profile pins in GitHub profile order. |
-| `models.json` | Two verified original designs, with links and provenance. |
+| `models.json` | Seven original designs, with links and provenance. |
 | `skills-reviewed.json` | Authorship review and explicit skill allowlist. |
 | `skills.json` | Generated reviewed skill catalogue. |
 | `scripts/sync-skills.mjs` | Generates Skills from one immutable commit on `amitkuzi/skills@main`. |
@@ -42,12 +42,16 @@ so profile metadata cannot silently restore outdated service marketing. Private 
 and forks are excluded even when listed in the review file. Unpinned projects leave Source.
 
 Tools and Printed cards are hand-edited; keep the model cards and `models.json` consistent.
-Printed includes exactly two original designs verified on Printables on 2026-11-06: the
+Printed includes seven original designs. Two were verified on Printables on 2026-11-06: the
 Centauri Carbon CANVAS Top Hat and Poop Collector, both by Amit Kuzi under CC BY 4.0
 on Printables. Their exact MakerWorld listings are also linked; no generic profile links are used.
-Five earlier model listings and generic profile links remain withheld because their authorship
-has not been verified. Their previous content remains in Git history. Verify origin before
-adding a model listing; avoid blanket authorship claims.
+OneWall is restored based on its original parametric source, Git authorship history and
+publication records explicitly naming Amit Kuzi as the original designer. Its current platform
+license fields were not freshly confirmed, so its card carries no license badge.
+Amit Kuzi explicitly confirmed on 2026-11-06 that all five earlier models are his original
+work and authorized restoration. Their existing listing URLs are preserved, with the
+confirmation recorded in `models.json`. No unverified platform licenses are asserted.
+Verify origin before adding a model listing; avoid blanket authorship claims.
 
 ## Review updates locally
 
@@ -70,8 +74,8 @@ updates to already reviewed skills can still flow through the existing scheduled
 
 ## Publication
 
-GitHub Pages uses `main`, folder `/ (root)`. Release **1.1.1**, dated **2026-11-06**, is
-recorded in `release.json`. It increments the 1.1.0 version evidenced in Git history.
+GitHub Pages uses `main`, folder `/ (root)`. Release **1.1.2**, dated **2026-11-06**, is
+recorded in `release.json`. It increments the published 1.1.1 release.
 The visible footer and `CHANGELOG.md` carry the same version/date; the existing test command
 checks this consistency. Deployment status must be verified separately on the live page.
 

@@ -48,6 +48,103 @@
         "evidence": "Printables page identifies the owner and explicitly states this is an original creation by Amit Kuzi.",
         "makerWorldEvidence": "Exact listing supplied by Amit Kuzi and corroborated by prior verified local records on 2026-11-06."
       }
+    },
+    {
+      "id": "onewall-bins",
+      "title": "OneWall - Vase-Mode Bins + Gridfinity Creator",
+      "summary": "Parametric vase-mode bins and containers generated with OneWall. Adjust dimensions and wall textures, then export a printable model.",
+      "tool": "onewall",
+      "links": [
+        {
+          "platform": "Printables",
+          "url": "https://www.printables.com/model/1785076-onewall-vase-mode-bins-gridfinity-creator-parametr"
+        },
+        {
+          "platform": "MakerWorld",
+          "url": "https://makerworld.com/en/models/2948815-onewall-vase-mode-bin-container-customizer"
+        }
+      ],
+      "provenance": {
+        "verifiedOn": "2026-11-06",
+        "author": "Amit Kuzi",
+        "evidence": "OneWall README credits Amit Kuzi; source history starts with author amitkuzi in commit 5f2f660 on 2026-06-18. Original parametric onewall.scad source is present. Publication records explicitly identify designer amitkuzi and original design, with no remix source.",
+        "source": "https://github.com/amitkuzi/OneWall",
+        "licenseNote": "Repository code is Apache-2.0; README specifies CC BY 4.0 for generated models. Current platform license fields were not freshly confirmed, so the card does not assert a platform license.",
+        "listingNote": "Exact listing URLs retained from the previous portfolio catalogue; restoration is based on documentary authorship evidence.",
+        "userConfirmation": "Amit Kuzi explicitly confirmed on 2026-11-06 that all five earlier designs are his original work and authorized restoration."
+      }
+    },
+    {
+      "id": "vacuum-valve",
+      "title": "Vacuum Valve for Bag or Container",
+      "summary": "A printable one-way valve for pulling air out of a storage bag or container.",
+      "tool": null,
+      "links": [
+        {
+          "platform": "MakerWorld",
+          "url": "https://makerworld.com/en/models/2611095-vacuum-valve-for-bag-or-container"
+        }
+      ],
+      "provenance": {
+        "verifiedOn": "2026-11-06",
+        "author": "Amit Kuzi",
+        "evidence": "Amit Kuzi explicitly confirmed that all five earlier designs are his original work and authorized restoration.",
+        "listingNote": "Exact title, summary and listing URL retained from the previous portfolio catalogue. No platform license is asserted."
+      }
+    },
+    {
+      "id": "helmet-donut",
+      "title": "Helmet Donut (TPU Edition)",
+      "summary": "A TPU ring that keeps a helmet off the floor and off its shell.",
+      "tool": null,
+      "links": [
+        {
+          "platform": "MakerWorld",
+          "url": "https://makerworld.com/en/models/2584800-helmet-donut-tpu-edition"
+        }
+      ],
+      "provenance": {
+        "verifiedOn": "2026-11-06",
+        "author": "Amit Kuzi",
+        "evidence": "Amit Kuzi explicitly confirmed that all five earlier designs are his original work and authorized restoration.",
+        "listingNote": "Exact title, summary and listing URL retained from the previous portfolio catalogue. No platform license is asserted."
+      }
+    },
+    {
+      "id": "headphone-hanger",
+      "title": "Sleek Under-Desk Headphone Hanger",
+      "summary": "A low-profile hanger that mounts under a desk edge and keeps headphones off the work surface.",
+      "tool": null,
+      "links": [
+        {
+          "platform": "MakerWorld",
+          "url": "https://makerworld.com/en/models/2568791-sleek-under-desk-headphone-hanger"
+        }
+      ],
+      "provenance": {
+        "verifiedOn": "2026-11-06",
+        "author": "Amit Kuzi",
+        "evidence": "Amit Kuzi explicitly confirmed that all five earlier designs are his original work and authorized restoration.",
+        "listingNote": "Exact title, summary and listing URL retained from the previous portfolio catalogue. No platform license is asserted."
+      }
+    },
+    {
+      "id": "pour-over-ring",
+      "title": "Pour-Over Coffee Glass Stabilizer Ring",
+      "summary": "A ring that steadies a pour-over cone on a glass carafe.",
+      "tool": null,
+      "links": [
+        {
+          "platform": "MakerWorld",
+          "url": "https://makerworld.com/en/models/2494091-pour-over-coffee-glass-stabilizer-ring"
+        }
+      ],
+      "provenance": {
+        "verifiedOn": "2026-11-06",
+        "author": "Amit Kuzi",
+        "evidence": "Amit Kuzi explicitly confirmed that all five earlier designs are his original work and authorized restoration.",
+        "listingNote": "Exact title, summary and listing URL retained from the previous portfolio catalogue. No platform license is asserted."
+      }
     }
   ]
 }

@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.1.2 - 2026-11-06
+
+- Restore all five earlier model listings following Amit Kuzi's explicit confirmation of original authorship.
+- Retain both CANVAS designs, bringing the Printed catalogue to seven original designs.
+- Preserve candidate-focused wording, reviewed skill/repository gates and the publication workflow.
+
 ## 1.1.1 - 2026-11-06
 
 - Present Amit Kuzi as a Software Architect open to employment opportunities.
