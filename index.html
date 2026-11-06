@@ -3,25 +3,24 @@
 <head>
 <meta charset="utf-8">
 <!-- amitkuzi.github.io hub — T-53.
-     Job-title string is canonical per T-44: "Software Architect & Engineering Consultant".
-     It appears in three places: <title>, .role, and the Person JSON-LD below. Keep them identical.
-     pinned.json / models.json are the source of truth for Source / Printed. The Skills markup is
-     generated from public SKILL.md frontmatter in github.com/amitkuzi/skills, branch main.
+     Job-title string is canonical per T-44: "Software Architect".
+     Keep the title, social metadata, visible role and Person JSON-LD consistent.
+     pinned.json is the Source catalogue. The Skills markup is
+     generated only for the reviewed entries in skills-reviewed.json.
      All markup remains static so the page is crawlable without JavaScript.
-     Model thumbnails are drawn as toolpath contours (design-philosophy-continuous-wall.md) —
-     no platform CDN hotlinks, no referrer leak. -->
-<title>Amit Kuzi — Software Architect &amp; Engineering Consultant</title>
+     No platform CDN hotlinks. -->
+<title>Amit Kuzi — Software Architect</title>
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="preload" href="fonts/archivo-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/public-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/rubik-hebrew-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Amit Kuzi — software architect and engineering consultant in Holon, Israel. Open tools, own repositories and published 3D models.">
+<meta name="description" content="Amit Kuzi — software architect in Holon, Israel. Open to software engineering and architecture roles. Explore selected projects and technical work.">
 <link rel="canonical" href="https://amitkuzi.github.io/">
 <meta name="author" content="Amit Kuzi">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Amit Kuzi — Software Architect &amp; Engineering Consultant">
-<meta property="og:description" content="Open tools, own repositories and published 3D models. Holon, Israel. Building software since 1997.">
+<meta property="og:title" content="Amit Kuzi — Software Architect">
+<meta property="og:description" content="Selected software projects, tools and Agent Skills. Holon, Israel. Building software since 1997.">
 <meta property="og:url" content="https://amitkuzi.github.io/">
 <meta name="twitter:card" content="summary">
 
@@ -33,7 +32,7 @@
       "@type": "CollectionPage",
       "@id": "https://amitkuzi.github.io/#page",
       "url": "https://amitkuzi.github.io/",
-      "name": "Amit Kuzi — Software Architect & Engineering Consultant",
+      "name": "Amit Kuzi — Software Architect",
       "about": { "@id": "https://amitkuzi.com/#amit-kuzi" },
       "hasPart": [
         { "@id": "https://amitkuzi.github.io/OneWall/#app" },
@@ -45,7 +44,7 @@
       "@id": "https://amitkuzi.com/#amit-kuzi",
       "name": "Amit Kuzi",
       "alternateName": "עמית קוזי",
-      "jobTitle": "Software Architect & Engineering Consultant",
+      "jobTitle": "Software Architect",
       "url": "https://amitkuzi.com",
       "address": {
         "@type": "PostalAddress",
@@ -53,11 +52,8 @@
         "addressCountry": "IL"
       },
       "sameAs": [
-        "https://github.com/amitkuzi",
-        "https://makerworld.com/en/@amitkuzi",
-        "https://www.printables.com/@amitkuzi_4603412/models"
-      ],
-      "worksFor": { "@type": "Organization", "name": "Amit Kuzi Consulting" }
+        "https://github.com/amitkuzi"
+      ]
     },
     {
       "@type": "SoftwareApplication",
@@ -220,26 +216,6 @@ section{padding:66px 0 0}
   text-transform:uppercase;color:var(--brass-ink);margin-top:12px}
 .repo .rm b{color:var(--fg2);font-weight:600}
 
-/* ---------- printed ---------- */
-.models{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-inline-start:1px solid var(--line-strong)}
-.model{border-bottom:1px solid var(--line-strong);border-inline-end:1px solid var(--line-strong);padding:0}
-.mthumb{aspect-ratio:3/2;background:var(--base);position:relative;overflow:hidden}
-.mthumb svg{position:absolute;inset:0;width:100%;height:100%}
-.mthumb svg path{fill:none;stroke:#f2a97c;stroke-width:.9;vector-effect:non-scaling-stroke}
-.mthumb .n{position:absolute;inset-inline-start:15px;bottom:9px;font-family:var(--font-display);font-weight:800;
-  font-size:34px;color:rgba(181,167,151,.42);line-height:1;letter-spacing:.02em}
-.mthumb .ph{position:absolute;inset-inline-end:13px;top:11px;font-family:var(--font-display);font-weight:600;
-  font-size:8.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(181,167,151,.42)}
-.mbody{padding:16px 18px 20px}
-.mbody .mt{font-family:var(--font-display);font-weight:800;font-size:14.5px;line-height:1.24}
-.mbody .ms{font-size:12.5px;color:var(--fg2);margin-top:7px;line-height:1.48}
-.plats{display:flex;gap:6px;margin-top:12px}
-.plats{flex-wrap:wrap}
-.plats a{font-family:var(--font-display);font-weight:600;font-size:9.5px;letter-spacing:.11em;
-  text-transform:uppercase;text-decoration:none;color:var(--fg);border:1px solid var(--line-strong);
-  padding:3px 7px;white-space:nowrap}
-.plats a.made{border-color:var(--ember);color:var(--ember-ink)}
-
 /* ---------- footer ---------- */
 footer{background:var(--base);color:var(--fg-on-base);margin-top:82px}
 footer .wrap{padding-top:44px;padding-bottom:44px;display:flex;justify-content:space-between;
@@ -248,17 +224,10 @@ footer .fl{font-family:var(--font-display);font-weight:800;font-size:20px;color:
 footer .fm{font-size:13px;margin-top:8px;color:var(--fg-on-base)}
 footer .fr{text-align:end;font-family:var(--font-display);font-weight:600;font-size:10.5px;
   letter-spacing:.15em;text-transform:uppercase;color:var(--fg-on-base-strong);line-height:2}
-.cat{background:transparent}
-.catin{padding:26px 22px;border-inline-start:var(--rule) solid var(--brass);height:100%}
-.catk{font-family:var(--font-display);font-weight:800;font-size:10.5px;letter-spacing:.16em;
-  text-transform:uppercase;color:var(--brass-ink)}
-.catn{font-family:var(--font-display);font-weight:800;font-size:15px;line-height:1.3;margin-top:12px;
-  letter-spacing:-.006em}
-.catf{font-size:11.5px;color:var(--fg2);margin-top:14px;line-height:1.62}
 .note{font-family:var(--font-display);font-weight:600;font-size:10px;letter-spacing:.15em;
   text-transform:uppercase;color:var(--fg2);padding:14px 0 0}
 
-@media(max-width:820px){.tool{grid-template-columns:1fr;gap:24px}.repos,.models{grid-template-columns:1fr}
+@media(max-width:820px){.tool{grid-template-columns:1fr;gap:24px}.repos{grid-template-columns:1fr}
  .mast h1{font-size:clamp(40px,11vw,76px)}.contour{display:none}footer .wrap{flex-direction:column;align-items:flex-start;gap:22px}footer .fr{text-align:start}}
 </style>
 </head>
@@ -277,15 +246,13 @@ footer .fr{text-align:end;font-family:var(--font-display);font-weight:600;font-s
       </svg>
       <h1>Amit Kuzi<span class="he">עמית קוזי</span></h1>
     </div>
-    <div class="role">Software Architect &amp; Engineering Consultant</div>
-    <p class="bio">Independent software architect and engineering consultant. Architecture and
-      modernisation, applied AI in engineering, and FDM process. Everything below is public, working,
-      and mine.</p>
+    <div class="role">Software Architect</div>
+    <p class="bio">Software architect focused on modernisation, applied AI in engineering, and
+      parametric design. Open to software engineering and architecture roles. Explore selected
+      projects and technical work below.</p>
     <nav class="sameas">
       <a href="https://amitkuzi.com"><span>↗</span>amitkuzi.com</a>
       <a href="https://github.com/amitkuzi"><span>↗</span>GitHub</a>
-      <a href="https://makerworld.com/en/@amitkuzi"><span>↗</span>MakerWorld</a>
-      <a href="https://www.printables.com/@amitkuzi_4603412/models"><span>↗</span>Printables</a>
     </nav>
   </div>
 </header>
@@ -327,7 +294,7 @@ footer .fr{text-align:end;font-family:var(--font-display);font-weight:600;font-s
   </section>
 
   <section>
-    <div class="shead"><div class="idx">02</div><h2>Source</h2><div class="count">Pinned on GitHub</div></div>
+    <div class="shead"><div class="idx">02</div><h2>Source</h2><div class="count">Selected repositories</div></div>
     <div class="repos">
       <!-- source:auto:start -->
       <div class="repo"><div class="rn"><a href="https://github.com/amitkuzi/kuziSlicer">kuziSlicer</a></div>
@@ -339,60 +306,29 @@ footer .fr{text-align:end;font-family:var(--font-display);font-weight:600;font-s
       <div class="repo"><div class="rn"><a href="https://github.com/amitkuzi/OneWall">OneWall</a></div>
         <div class="rd">Parametric vase-mode bin, container and Gridfinity customizer that runs in the browser. Export STL, STEP and 3MF.</div>
         <div class="rm">JavaScript · <b>Pinned</b></div></div>
-      <div class="repo"><div class="rn"><a href="https://github.com/amitkuzi/skills">skills</a></div>
-        <div class="rd">Amit Kuzi&#39;s reusable Agent Skills for Claude and other compatible tools: Hebrew ADHD-friendly formatting, C#/.NET standards, mission orchestration, QA and more.</div>
-        <div class="rm">Python · <b>Pinned</b></div></div>
       <div class="repo"><div class="rn"><a href="https://github.com/amitkuzi/ai-toolbox">ai-toolbox</a></div>
-        <div class="rd">Self-maintaining catalog of AI tools plus a cost-ordered decision gate that agents follow before delegating work. Claude Code plugin with a traceable outcome log.</div>
+        <div class="rd">AI tool catalogue, task-routing rules and an append-only outcome log for agent workflows.</div>
         <div class="rm">Python · <b>Pinned</b></div></div>
       <!-- source:auto:end -->
     </div>
-    <div class="note">Automatically synced to pinned.json from the public repositories pinned on <a href="https://github.com/amitkuzi">Amit's GitHub overview</a>, in profile order.</div>
+    <div class="note">Selected projects from <a href="https://github.com/amitkuzi">Amit's GitHub profile</a>, reviewed before inclusion.</div>
   </section>
 
-  <section>
-    <div class="shead"><div class="idx">03</div><h2>Printed</h2><div class="count">Published models</div></div>
-    <div class="models">
-      <div class="model">
-        <div class="mthumb"><div class="g"></div><div class="n">01</div></div>
-        <div class="mbody"><div class="mt">OneWall — Vase-Mode Bins + Gridfinity Creator</div>
-          <div class="ms">Parametric bins generated in the browser. Pick the dimensions, export the STL.</div>
-          <div class="plats"><a class="made" href="https://amitkuzi.github.io/OneWall/">Made with OneWall</a><a href="https://makerworld.com/en/models/2948815-onewall-vase-mode-bin-container-customizer">MakerWorld</a><a href="https://www.printables.com/model/1785076-onewall-vase-mode-bins-gridfinity-creator-parametr">Printables</a></div></div>
-      </div>
-      <div class="model">
-        <div class="mthumb"><div class="g"></div><div class="n">02</div></div>
-        <div class="mbody"><div class="mt">Vacuum Valve for Bag or Container</div>
-          <div class="ms">A printable one-way valve for pulling air out of a storage bag.</div>
-          <div class="plats"><a href="https://makerworld.com/en/models/2611095-vacuum-valve-for-bag-or-container">MakerWorld</a></div></div>
-      </div>
-      <div class="model">
-        <div class="mthumb"><div class="g"></div><div class="n">03</div></div>
-        <div class="mbody"><div class="mt">Helmet Donut (TPU Edition)</div>
-          <div class="ms">A TPU ring that keeps a helmet off the floor and off its shell.</div>
-          <div class="plats"><a href="https://makerworld.com/en/models/2584800-helmet-donut-tpu-edition">MakerWorld</a></div></div>
-      </div>
-      <div class="model">
-        <div class="mthumb"><div class="g"></div><div class="n">04</div></div>
-        <div class="mbody"><div class="mt">Sleek Under-Desk Headphone Hanger</div>
-          <div class="ms">Low-profile, mounts under a desk edge, keeps the work surface clear.</div>
-          <div class="plats"><a href="https://makerworld.com/en/models/2568791-sleek-under-desk-headphone-hanger">MakerWorld</a></div></div>
-      </div>
-      <div class="model">
-        <div class="mthumb"><div class="g"></div><div class="n">05</div></div>
-        <div class="mbody"><div class="mt">Pour-Over Coffee Glass Stabilizer Ring</div>
-          <div class="ms">Steadies a pour-over cone on a glass carafe.</div>
-          <div class="plats"><a href="https://makerworld.com/en/models/2494091-pour-over-coffee-glass-stabilizer-ring">MakerWorld</a></div></div>
-      </div>
-      <div class="model cat">
-        <div class="catin">
-          <div class="catk">Catalogue</div>
-          <div class="catn">Five published designs<br>across two platforms.</div>
-          <div class="catf">models.json — hand-edited,<br>redeployed. Nothing fetched<br>at run time.</div>
-        </div>
-      </div>
+
+
+  <section id="printed">
+    <div class="shead"><div class="idx">03</div><h2>Printed</h2><div class="count">Original designs</div></div>
+    <div class="repos">
+      <div class="repo"><div class="rn"><a href="https://www.printables.com/model/1900377-top-hat-for-elegoo-centauri-carbon-1-with-canvas">Top Hat for Elegoo Centauri Carbon 1 with CANVAS</a></div>
+        <div class="rd">Original PETG-CF modular top cover with mounting panels and connectors. Includes STL and 3MF files.</div>
+        <div class="rd"><a href="https://makerworld.com/en/models/3539119-top-hat-for-elegoo-centauri-carbon-1-with-canvas#profileId-4047634">View on MakerWorld</a></div>
+        <div class="rm">Amit Kuzi &middot; <b>Printables: CC BY 4.0</b></div></div>
+      <div class="repo"><div class="rn"><a href="https://www.printables.com/model/1900409-poop-collector-for-elegoo-centauri-carbon-with-can">Poop Collector for Elegoo Centauri Carbon with CANVAS</a></div>
+        <div class="rd">Magnetic purge-waste collector. Includes an STL file and the original ElegooSlicer 3MF project.</div>
+        <div class="rd"><a href="https://makerworld.com/en/models/3539364-canvas-poop-collector-for-elegoo-centauri-carbon">View on MakerWorld</a></div>
+        <div class="rm">Amit Kuzi &middot; <b>Printables: CC BY 4.0</b></div></div>
     </div>
   </section>
-
 
   <section id="skills">
     <div class="shead"><div class="idx">04</div><h2>Skills</h2><div class="count">Agent Skills — for Claude and compatible platforms</div></div>
@@ -400,9 +336,6 @@ footer .fr{text-align:end;font-family:var(--font-display);font-weight:600;font-s
       <!-- skills:auto:start -->
       <div class="repo"><div class="rn"><a href="https://github.com/amitkuzi/skills/tree/main/csharp-standards">csharp-standards</a></div>
         <div class="rd">Team coding standards for .NET/C# work — the Manager/Engine/Accessor three-layer architecture, immutable records and DTOs, async and CancellationToken rules, structured logging, testing requirements, and the counter-model review workflow. Use this skill for ANY task that writes, refactors, reviews, or plans C#/.NET code, adds a service or interface, touches data access, or produces a test plan — even when the user does not mention standards, architecture, or conventions explicitly.</div>
-        <div class="rm">Agent Skill · Public · <b>main</b></div></div>
-      <div class="repo"><div class="rn"><a href="https://github.com/amitkuzi/skills/tree/main/grill-me">grill-me</a></div>
-        <div class="rd">A relentless interview to sharpen a plan, design, decision or idea. Use when the user says &quot;grill me&quot;, &quot;grill me about X&quot;, or wants their thinking stress-tested before acting.</div>
         <div class="rm">Agent Skill · Public · <b>main</b></div></div>
       <div class="repo"><div class="rn"><a href="https://github.com/amitkuzi/skills/tree/main/adhd-hebrew">hebrew-adhd</a></div>
         <div class="rd">Ultra-concise, BLUF-first, scannable Hebrew responses optimized for an ADHD reader. Use for conversational answers, explanations, summaries, comparisons, and recommendations. Also decodes text typed in the wrong Hebrew/English keyboard layout. Do NOT use for code output, formal deliverables written to inbox/, or long-form documents.</div>
@@ -424,7 +357,7 @@ footer .fr{text-align:end;font-family:var(--font-display);font-weight:600;font-s
         <div class="rm">Agent Skill · Public · <b>main</b></div></div>
       <!-- skills:auto:end -->
     </div>
-    <div class="note">Automatically synced from each public skill's SKILL.md description on the <a href="https://github.com/amitkuzi/skills/tree/main">main branch of github.com/amitkuzi/skills</a></div>
+    <div class="note">Selected skills by Amit Kuzi. Each entry is reviewed for authorship before inclusion.</div>
   </section>
 
 </main>
@@ -434,50 +367,16 @@ footer .fr{text-align:end;font-family:var(--font-display);font-weight:600;font-s
   <div class="wrap">
     <div>
       <div class="fl">amitkuzi.github.io</div>
-      <div class="fm">Everything here is public, working, and mine. The writing lives at amitkuzi.com.</div>
+      <div class="fm">Selected software projects, tools and Agent Skills. More about me at amitkuzi.com.</div>
     </div>
     <div class="fr">
-      Amit Kuzi Consulting<br>Holon · Israel<br>Since 1997
+      Amit Kuzi<br>Holon · Israel<br>Since 1997<br><span id="release">Version 1.1.1 &middot; 2026-11-06</span>
     </div>
   </div>
 </footer>
 
 
 <script>
-// Vase-mode toolpath contours. Each ring is one layer of a single continuous wall;
-// the silhouette is the profile of the object it was actually printed as.
-const PROFILES = [
-  // OneWall bins — straight-walled bin, slight taper, textured wall
-  {p:t=>0.62+0.16*t,           lobes:6,  amp:.055, n:20, hs:0.92, sq:0.30},
-  // Vacuum valve — wide flange stepping down to a narrow neck
-  {p:t=>1.00-0.62*Math.pow(t,.55), lobes:0, amp:0,  n:16, hs:0.66, sq:0.34},
-  // Helmet donut — torus, TPU, the fat mid-section
-  {p:t=>0.52+0.46*Math.sin(Math.PI*t), lobes:0, amp:0, n:19, hs:0.70, sq:0.36},
-  // Headphone hanger — narrow shank opening into a hook
-  {p:t=>0.34+0.60*Math.pow(t,2.4), lobes:4, amp:.05, n:18, hs:0.96, sq:0.28},
-  // Pour-over ring — shallow, wide, near-constant
-  {p:t=>0.92-0.10*t,           lobes:0, amp:0,  n:11, hs:0.40, sq:0.38}
-];
-function stack(w,h,cfg){
-  const cx=w*.5, base=h*.80, maxR=Math.min(w*.40,h*.46), out=[];
-  for(let r=0;r<cfg.n;r++){
-    const t=r/(cfg.n-1), R=maxR*cfg.p(t), y=base-t*h*cfg.hs*0.62;
-    let d='';
-    for(let i=0;i<=110;i++){
-      const a=i/110*Math.PI*2;
-      const lobe=cfg.lobes?1+cfg.amp*Math.cos(a*cfg.lobes):1;
-      d+=(i?'L':'M')+(cx+Math.cos(a)*R*lobe).toFixed(1)+' '+(y+Math.sin(a)*R*lobe*cfg.sq).toFixed(1);
-    }
-    out.push('<path d="'+d+'Z" style="opacity:'+(0.20+0.55*t).toFixed(3)+'"/>');
-  }
-  return out.join('');
-}
-document.querySelectorAll('.mthumb').forEach((el,i)=>{
-  const r=el.getBoundingClientRect(), w=Math.round(r.width)||300, h=Math.round(r.height)||200;
-  el.insertAdjacentHTML('afterbegin',
-    '<svg viewBox="0 0 '+w+' '+h+'" preserveAspectRatio="none">'+stack(w,h,PROFILES[i%5])+'</svg>');
-  el.insertAdjacentHTML('beforeend','<div class="ph">Toolpath</div>');
-});
 // Masthead — the same gesture at monumental scale, cropped by the edge.
 (function(){
   const el=document.querySelector('.mast'); if(!el) return;

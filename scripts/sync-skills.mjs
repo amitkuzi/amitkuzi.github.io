@@ -123,7 +123,12 @@ async function fetchText(fetchImpl, url) {
   return response.text();
 }
 
-export async function loadPublicSkills(fetchImpl = fetch) {
+export async function loadPublicSkills(fetchImpl, reviewedSkills) {
+  if (!Array.isArray(reviewedSkills) || reviewedSkills.length === 0 ||
+      reviewedSkills.some((id) => typeof id !== 'string' || !/^[a-z0-9][a-z0-9-]*$/.test(id)) ||
+      new Set(reviewedSkills).size !== reviewedSkills.length) {
+    throw new Error('A non-empty, unique list of reviewed skill folder names is required.');
+  }
   const branch = BRANCH;
   const commit = await fetchJson(fetchImpl, `${API_ROOT}/commits/${encodeURIComponent(branch)}`);
   const sourceCommit = commit.sha;
@@ -135,9 +140,11 @@ export async function loadPublicSkills(fetchImpl = fetch) {
     throw new Error('GitHub returned a truncated repository tree; refusing a partial sync.');
   }
 
-  const paths = findPublicSkillPaths(tree.tree);
-  if (paths.length === 0) {
-    throw new Error(`No top-level public skills were found on branch ${branch}.`);
+  const publicPaths = findPublicSkillPaths(tree.tree);
+  const paths = reviewedSkills.map((id) => `${id}/SKILL.md`);
+  const missing = paths.filter((path) => !publicPaths.includes(path));
+  if (missing.length > 0) {
+    throw new Error(`Reviewed skills are missing from branch main: ${missing.join(', ')}`);
   }
 
   const skills = await Promise.all(paths.map(async (skillPath) => {
@@ -163,7 +170,8 @@ export async function syncSkills({ fetchImpl = fetch, rootDir } = {}) {
   const projectRoot = rootDir || resolve(dirname(fileURLToPath(import.meta.url)), '..');
   const indexPath = resolve(projectRoot, 'index.html');
   const skillsPath = resolve(projectRoot, 'skills.json');
-  const catalogue = await loadPublicSkills(fetchImpl);
+  const review = JSON.parse(await readFile(resolve(projectRoot, 'skills-reviewed.json'), 'utf8'));
+  const catalogue = await loadPublicSkills(fetchImpl, review.skills);
   const index = await readFile(indexPath, 'utf8');
   const updatedIndex = replaceGeneratedSkills(index, renderSkillCards(catalogue.skills, catalogue.branch));
 

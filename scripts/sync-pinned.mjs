@@ -16,7 +16,13 @@ async function fetchProfile() {
   return JSON.parse(stdout);
 }
 
-export async function loadPinnedRepositories(loadProfile = fetchProfile) {
+export async function loadPinnedRepositories(loadProfile = fetchProfile, reviewedRepositories) {
+  if (!Array.isArray(reviewedRepositories) || reviewedRepositories.length === 0 ||
+      reviewedRepositories.some((repo) => !/^amitkuzi\/[A-Za-z0-9_.-]+$/.test(repo.nameWithOwner) ||
+        typeof repo.description !== 'string' || !repo.description.trim()) ||
+      new Set(reviewedRepositories.map((repo) => repo.nameWithOwner)).size !== reviewedRepositories.length) {
+    throw new Error('A non-empty, unique list of reviewed repositories with descriptions is required.');
+  }
   const response = await loadProfile();
   const nodes = response.data?.user?.pinnedItems?.nodes;
   if (response.errors?.length || !Array.isArray(nodes)) {
@@ -24,10 +30,12 @@ export async function loadPinnedRepositories(loadProfile = fetchProfile) {
   }
   return {
     source: 'https://github.com/amitkuzi',
-    repositories: nodes.filter((repo) => repo && repo.isPrivate === false).map((repo) => ({
+    repositories: nodes.filter((repo) => repo && repo.isPrivate === false && repo.isFork === false &&
+      reviewedRepositories.some((reviewed) => reviewed.nameWithOwner === repo.nameWithOwner)).map((repo) => ({
       nameWithOwner: repo.nameWithOwner,
       name: repo.name,
-      description: repo.description,
+      // Descriptions are curated so remote profile edits cannot restore service marketing.
+      description: reviewedRepositories.find((reviewed) => reviewed.nameWithOwner === repo.nameWithOwner).description,
       repo: repo.url,
       language: repo.primaryLanguage?.name || null,
       isFork: repo.isFork
@@ -36,7 +44,7 @@ export async function loadPinnedRepositories(loadProfile = fetchProfile) {
 }
 
 export function renderPinnedCards(repositories) {
-  if (repositories.length === 0) return '      <p>No public repositories pinned on GitHub.</p>';
+  if (repositories.length === 0) return '      <p>No reviewed public projects are currently pinned on GitHub.</p>';
   return repositories.map((repo) => {
     const name = escapeHtml(repo.name);
     const url = escapeHtml(repo.repo);
@@ -60,7 +68,8 @@ export function replaceGeneratedSource(html, cards) {
 
 export async function syncPinned({ loadProfile, rootDir } = {}) {
   const projectRoot = rootDir || resolve(dirname(fileURLToPath(import.meta.url)), '..');
-  const catalogue = await loadPinnedRepositories(loadProfile);
+  const review = JSON.parse(await readFile(resolve(projectRoot, 'projects-reviewed.json'), 'utf8'));
+  const catalogue = await loadPinnedRepositories(loadProfile, review.repositories);
   const indexPath = resolve(projectRoot, 'index.html');
   const index = await readFile(indexPath, 'utf8');
   await Promise.all([

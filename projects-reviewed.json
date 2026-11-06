@@ -1,0 +1,26 @@
+{
+  "reviewedOn": "2026-11-06",
+  "evidence": "Existing portfolio projects. Review authorship before adding entries. The mixed skills collection is omitted; individual reviewed skills remain in the Skills section.",
+  "repositories": [
+    {
+      "nameWithOwner": "amitkuzi/amitkuzi.github.io",
+      "description": "GitHub Pages hub for Amit Kuzi, Software Architect in Holon, Israel. Presents selected software projects, tools and Agent Skills."
+    },
+    {
+      "nameWithOwner": "amitkuzi/kuziSlicer",
+      "description": "Electron desktop app for loading 3D models, slicing, previewing G-code and sending validated print jobs to supported printers on a trusted LAN. Built with TypeScript."
+    },
+    {
+      "nameWithOwner": "amitkuzi/localViewer",
+      "description": "Local-first viewer for Markdown, YAML, CSV, STL, 3MF, STEP, OpenSCAD and images. Files never leave your browser."
+    },
+    {
+      "nameWithOwner": "amitkuzi/OneWall",
+      "description": "Parametric vase-mode bin, container and Gridfinity customizer that runs in the browser. Export STL, STEP and 3MF."
+    },
+    {
+      "nameWithOwner": "amitkuzi/ai-toolbox",
+      "description": "AI tool catalogue, task-routing rules and an append-only outcome log for agent workflows."
+    }
+  ]
+}

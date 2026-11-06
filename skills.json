@@ -10,12 +10,6 @@
       "repo": "https://github.com/amitkuzi/skills/tree/main/csharp-standards"
     },
     {
-      "id": "grill-me",
-      "name": "grill-me",
-      "description": "A relentless interview to sharpen a plan, design, decision or idea. Use when the user says \"grill me\", \"grill me about X\", or wants their thinking stress-tested before acting.",
-      "repo": "https://github.com/amitkuzi/skills/tree/main/grill-me"
-    },
-    {
       "id": "adhd-hebrew",
       "name": "hebrew-adhd",
       "description": "Ultra-concise, BLUF-first, scannable Hebrew responses optimized for an ADHD reader. Use for conversational answers, explanations, summaries, comparisons, and recommendations. Also decodes text typed in the wrong Hebrew/English keyboard layout. Do NOT use for code output, formal deliverables written to inbox/, or long-form documents.",

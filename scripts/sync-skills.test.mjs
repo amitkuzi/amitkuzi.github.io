@@ -69,6 +69,7 @@ test('syncSkills reads the requested main branch and pins one commit for HTML an
     'utf8'
   );
 
+  await writeFile(join(rootDir, 'skills-reviewed.json'), JSON.stringify({ skills: ['demo'] }));
   const commitSha = 'a'.repeat(40);
   const responses = new Map([
     ['https://api.github.com/repos/amitkuzi/skills/commits/main', {
@@ -80,7 +81,7 @@ test('syncSkills reads the requested main branch and pins one commit for HTML an
       json: async () => ({
         sha: 'b'.repeat(40),
         truncated: false,
-        tree: [{ path: 'demo/SKILL.md', type: 'blob' }]
+        tree: ['demo', 'grill-me', 'unreviewed'].map((name) => ({ path: `${name}/SKILL.md`, type: 'blob' }))
       })
     }],
     [`https://raw.githubusercontent.com/amitkuzi/skills/${commitSha}/demo/SKILL.md`, {
@@ -105,7 +106,8 @@ test('syncSkills reads the requested main branch and pins one commit for HTML an
     assert.equal(repeatedIndex, index);
     assert.equal(catalogue.sourceCommit, commitSha);
     assert.equal(catalogue.branch, 'main');
-    assert.equal(catalogue.skills[0].name, 'demo');
+    assert.deepEqual(catalogue.skills.map((skill) => skill.id), ['demo']);
+    assert.doesNotMatch(index, /grill-me|unreviewed/);
     assert.equal(catalogue.skills[0].repo, 'https://github.com/amitkuzi/skills/tree/main/demo');
     assert.match(index, /<b>main<\/b>/);
   } finally {
@@ -118,6 +120,27 @@ test('loadPublicSkills rejects an invalid commit before fetching a tree', async 
   await assert.rejects(loadPublicSkills(async (url) => {
     urls.push(url);
     return { ok: true, json: async () => ({}) };
-  }), /no valid commit SHA/);
+  }, ['demo']), /no valid commit SHA/);
   assert.deepEqual(urls, ['https://api.github.com/repos/amitkuzi/skills/commits/main']);
+});
+
+
+test('missing or invalid review fails closed', async () => {
+  for (const reviewed of [undefined, [], ['demo', 'demo'], ['../unsafe']]) {
+    await assert.rejects(loadPublicSkills(() => { throw new Error('must not fetch'); }, reviewed), /reviewed skill/);
+  }
+});
+
+test('a missing reviewed skill preserves existing HTML and JSON', async () => {
+  const rootDir = await mkdtemp(join(tmpdir(), 'missing-skill-'));
+  try {
+    await writeFile(join(rootDir, 'index.html'), 'existing page');
+    await writeFile(join(rootDir, 'skills.json'), 'existing catalogue');
+    await writeFile(join(rootDir, 'skills-reviewed.json'), JSON.stringify({ skills: ['missing'] }));
+    await assert.rejects(syncSkills({ rootDir, fetchImpl: async (url) => ({
+      ok: true, json: async () => url.includes('/commits/') ? { sha: 'a'.repeat(40) } : { tree: [] }
+    }) }), /Reviewed skills are missing/);
+    assert.equal(await readFile(join(rootDir, 'index.html'), 'utf8'), 'existing page');
+    assert.equal(await readFile(join(rootDir, 'skills.json'), 'utf8'), 'existing catalogue');
+  } finally { await rm(rootDir, { recursive: true, force: true }); }
 });

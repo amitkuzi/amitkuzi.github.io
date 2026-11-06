@@ -1,0 +1,14 @@
+{
+  "reviewedOn": "2026-11-06",
+  "evidence": "The amitkuzi/skills README credits these existing catalogue entries to Amit Kuzi. It explicitly identifies grill-me as unmodified work by Matt Pocock; that skill is excluded. Review README, LICENSE and origin before adding any entry.",
+  "source": "https://github.com/amitkuzi/skills/blob/main/README.md",
+  "skills": [
+    "adhd-hebrew",
+    "csharp-standards",
+    "refactor",
+    "report",
+    "slant3d",
+    "stage-gate",
+    "visual-manual"
+  ]
+}

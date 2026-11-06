@@ -1,8 +1,9 @@
 # Amit Kuzi
 
-Software Architect & Engineering Consultant based in Holon, Israel. Building software since 1997.
+Software Architect based in Holon, Israel. Building software since 1997.
+Open to software engineering and architecture roles.
 This host (amitkuzi.github.io) carries the working artifacts — live tools, source repositories,
-Agent Skills and published 3D models. The writing, case studies and contact details live at
+Agent Skills and two verified original printed designs. The writing, case studies and contact details live at
 https://amitkuzi.com
 
 The canonical entity record is https://amitkuzi.com/#amit-kuzi — every schema block on this host
@@ -20,19 +21,24 @@ points there rather than declaring a competing identity.
 
 ## Source repositories
 
-Listed in pinned.json on this host. Public repositories pinned on Amit's GitHub overview,
-in profile order. Missing repository descriptions are disclosed; pinned forks are identified.
+Selected public projects from Amit's GitHub pins are listed in pinned.json. Only reviewed,
+non-fork repositories are included; new pins are not added automatically.
+
+## Printed designs
+
+- **Top Hat for Elegoo Centauri Carbon 1 with CANVAS** - https://www.printables.com/model/1900377-top-hat-for-elegoo-centauri-carbon-1-with-canvas
+  Original PETG-CF modular top cover with mounting panels and connectors. Includes STL and 3MF files. Original design by Amit Kuzi; Printables license: CC BY 4.0.
+  MakerWorld: https://makerworld.com/en/models/3539119-top-hat-for-elegoo-centauri-carbon-1-with-canvas#profileId-4047634
+- **Poop Collector for Elegoo Centauri Carbon with CANVAS** - https://www.printables.com/model/1900409-poop-collector-for-elegoo-centauri-carbon-with-can
+  Magnetic purge-waste collector. Includes an STL file and the original ElegooSlicer 3MF project. Original design by Amit Kuzi; Printables license: CC BY 4.0.
+  MakerWorld: https://makerworld.com/en/models/3539364-canvas-poop-collector-for-elegoo-centauri-carbon
+
+Authorship verified on 2026-11-06; provenance is recorded in models.json.
 
 ## Agent Skills
 
-Listed in skills.json on this host and at https://github.com/amitkuzi/skills. Reusable Agent Skills
-for Claude (and any Agent-Skills-compatible platform), synchronized from the repository's main
-branch. Each folder has its own SKILL.md, README and LICENSE.
-
-## Published 3D models
-
-Listed in models.json on this host. Five designs across MakerWorld and Printables.
-Profiles: https://makerworld.com/en/@amitkuzi · https://www.printables.com/@amitkuzi_4603412/models
+Selected Amit Kuzi-authored skills are listed in skills.json: adhd-hebrew, csharp-standards,
+refactor, report, slant3d, stage-gate and visual-manual. Only reviewed entries are included.
 
 ## Areas of work
 
